@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>SanAr</title>
+	</head>
+	<body>
+		<h1>SanAr</h1>
+		<h2>Usuario Administrador </h2>
+
+		<button onclick="location.href='index.html'"> Inicio </button>
+
+		<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+		    <option value="" selected disabled>Operaciones</option>
+		    <option value="CrearNuevoPlan.html">Crear nuevo plan</option>
+		    <option value="ModificarDatosAdministrador.html">Modificar mis datos</option>
+		    <option value="ListarClientes.html">Listar Clientes</option>
+		    <option value="ListarEmpleados.html">Listar Empleados</option>
+		</select>	
+
+		<button onclick="location.href='LoginAdministrador.html'"> Cerrar Sesión </button>
+
+			
+	</body>
+</html>
