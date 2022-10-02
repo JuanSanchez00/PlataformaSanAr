@@ -5,11 +5,23 @@ USE sanar;
 
 
 CREATE TABLE Administrador(
-	usuario VARCHAR(45) NOT NULL,
+	nombre VARCHAR(45) NOT NULL,
+	apellido VARCHAR(45) NOT NULL,
+	fecha_nac DATE NOT NULL,
+	DNI INT(8) UNSIGNED NOT NULL,
 	password CHAR(32) NOT NULL,
+	email CHAR(32) NOT NULL,
+	provincia CHAR(32) NOT NULL,
+	localidad CHAR(32) NOT NULL,
+	calle CHAR(32) NOT NULL,
+	depto CHAR(32),
+	CP INT(4) NOT NULL,
+	tel INT(32) NOT NULL,
+	rol VARCHAR(45) NOT NULL,
+	sucursal VARCHAR(45),
 
-CONSTRAINT pk_administrador
-PRIMARY KEY (usuario)
+	CONSTRAINT pk_administrador
+	PRIMARY KEY (DNI)
 
 ) ENGINE=InnoDB;
 

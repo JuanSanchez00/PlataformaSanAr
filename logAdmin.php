@@ -5,7 +5,7 @@
 	$usuario = $_POST['nombreAdmin'];
 	$clave = $_POST['passAdmin'];
 
-	$q = "SELECT COUNT(*) as contar FROM Administrador WHERE usuario = '".$usuario."' and password = '".$clave."'";
+	$q = "SELECT COUNT(*) as contar FROM Administrador WHERE DNI = '".$usuario."' and password = '".$clave."'";
 	$consulta = mysqli_query($conexion,$q);
 	$array = mysqli_fetch_array($consulta);
 
