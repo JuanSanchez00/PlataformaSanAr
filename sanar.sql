@@ -63,6 +63,7 @@ CREATE TABLE Cliente(
 	apellido VARCHAR(45) NOT NULL,
 	fecha_nac DATE NOT NULL,
 	DNI INT(8) UNSIGNED NOT NULL,
+	password CHAR(32) NOT NULL,
 	email CHAR(32) NOT NULL,
 	provincia CHAR(32) NOT NULL,
 	localidad CHAR(32) NOT NULL,
