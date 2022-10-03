@@ -17,7 +17,7 @@
 			<input type="date" id="Fecha de nacimiento" name="Fecha" value="2000-01-01"><br>
 
 			<label for="DNI"> DNI: </label>
-			<input type="number" id="DNI" name="DNI" required><br>
+			<input type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 
 			<label for="Contraseña"> Contraseña: </label>
 			<input type="password" id="Contraseña" name="Contraseña" required><br>
@@ -37,18 +37,19 @@
 			<label for="Calle"> Calle: </label>
 			<input type="text" id="Calle" name="Calle" required>
 			<label for="Numero"> Numero: </label>
-			<input type="number" id="Numero" name="Numero" required><br>
+			<input type="number" id="Numero" name="Numero" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required>
+			<br>
 
 			<label for="DptoCasa"> Dpto o casa nro (opcional): </label>
 			<input type="text" id="DptoCasa" name="DptoCasa"><br>
 
 			<label for="CP"> CP: </label>
-			<input type="number" id="CP" name="CP" required><br>
+			<input type="number" id="CP" name="CP" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 
 			<label for="Telefono"> Telefono: </label>
-			<input type="number" id="Telefono" name="Telefono" required>
+			<input type="number" id="Telefono" name="Telefono" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required>
 			<label for="Codigo"> Codigo de Area: </label>
-			<input type="number" id="Codigo" name="Codigo" required><br>
+			<input type="number" id="Codigo" name="Codigo" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 
 			<label for="Plan"> Plan: </label>
 			<select id="Plan" name="Plan">
@@ -57,10 +58,27 @@
 				?>
 			</select  required><br>
 
-			<button for="Cancelar"> Cancelar </button>
-			<button for="Confirmar"> Confirmar </button><br>
-
+			
+			<br><input type="submit" value="Confirmar">
 
 		</form>
+
+		<br><button onclick="location.href='PantallaCliente.html'"> Cancelar </button>
+
+		<script type="text/javascript">
+			    function SoloEnteroPositivo(e) {
+			        var theEvent = e || window.event;
+			        var key = theEvent.keyCode || theEvent.which;
+			        key = String.fromCharCode(key);
+			        var regex = /[^,.;]+$/;
+			        if (!regex.test(key)) {
+			            theEvent.returnValue = false;
+			            if (theEvent.preventDefault) {
+			                theEvent.preventDefault();
+			            }
+			        }
+			    }
+			</script>
+
 	</body>
 </html>

@@ -82,8 +82,13 @@
 			<label for="Plan">* Plan: </label><br>
 			<select  id="Plan" name="Plan">
 				<?php
+<<<<<<< HEAD
 					include("listadoPlanes.php")
 				?>
+=======
+                    include("listadoPlanes.php")
+                ?>
+>>>>>>> c2166dd1c6ff5ae8043f87e0ebaa63167f08a738
 			</select required><br>
 
        		<script type="text/javascript">
