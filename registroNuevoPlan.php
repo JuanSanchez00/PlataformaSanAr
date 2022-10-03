@@ -2,6 +2,7 @@
 	require 'conexion.php';
 	session_start();
 
+	
 	$nombre = $_POST['Nombre'];
 	$consultasMedicas = $_POST['ConsultasMedicas'];
 	$consultasMedicasDomiciliarias = $_POST['ConsultasMedicasDomiciliarias'];
@@ -21,7 +22,7 @@
 	$analisisDeDiagnostico = $_POST['AnalisisDeDiagnostico'];
 
 
-	$consulta = "INSERT INTO Plan VALUES ('".$nombre."', '".$consultasMedicas."', ".$consultasMedicasDomiciliarias.", ".$consultasMedicasOnline.", '".$internacion."', '".$odontologia."', '".$ortodoncia."', '".$protesisOdontologica."', '".$implanteOdontologica." ".$kinesiologia."', '".$psicologia."', ".$medicamentosEnFarmacia.", ".$medicamentosEnInternacion.", '".$optica."', '".$cirugiaEstetica."', '".$analisisClinico."', '".$analisisDeDiagnostico."')";
+	$consulta = "INSERT INTO Plan VALUES ('".$nombre."', '".$consultasMedicas."', '".$consultasMedicasDomiciliarias."', '".$consultasMedicasOnline."', '".$internacion."', '".$odontologia."', '".$ortodoncia."', '".$protesisOdontologica."', '".$implanteOdontologica."', '".$kinesiologia."', '".$psicologia."', '".$medicamentosEnFarmacia."', '".$medicamentosEnInternacion."', '".$optica."', '".$cirugiaEstetica."', '".$analisisClinico."', '".$analisisDeDiagnostico."')";
 
 	$resultado = mysqli_query($conexion,$consulta);
 
