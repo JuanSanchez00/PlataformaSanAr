@@ -81,8 +81,9 @@
 
 			<label for="Plan">* Plan: </label><br>
 			<select  id="Plan" name="Plan">
-				<option value="A" selected>A</option>
- 				<option value="B">B</option>
+				<?php
+					include("listadoPlanes.php")
+				?>
 			</select required><br>
 
        		<script type="text/javascript">
