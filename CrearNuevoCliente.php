@@ -56,8 +56,9 @@
 				?>
 			</select  required><br>
 
-			<button for="Cancelar"> Cancelar </button>
-			<button for="Confirmar"> Confirmar </button><br>
+			<button onclick="location.href='PantallaAdministrador.php'"> Cancelar </button>
+			<button onclick="location.href='LoginCliente.php'"> Confirmar </button>
+
 
 			
 	</body>
