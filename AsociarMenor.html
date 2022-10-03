@@ -17,7 +17,7 @@
 			<input type="date" id="Fecha de nacimiento" name="Fecha" value="2000-01-01"><br>
 
 			<label for="DNI"> DNI: </label>
-			<input type="number" id="DNI" name="DNI" required><br>
+			<input type="number" id="DNI" name="DNI" min="1" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 
 			<label for="Relacion"> Relacion con el asociado: </label>
 			<select id="Relacion" name="Relacion">
@@ -36,6 +36,21 @@
 
 			<button onclick="location.href='PantallaCliente.html'"> Cancelar </button>
 			<button for="Confirmar"> Confirmar </button><br>
+
+			<script type="text/javascript">
+			    function SoloEnteroPositivo(e) {
+			        var theEvent = e || window.event;
+			        var key = theEvent.keyCode || theEvent.which;
+			        key = String.fromCharCode(key);
+			        var regex = /[^,.;]+$/;
+			        if (!regex.test(key)) {
+			            theEvent.returnValue = false;
+			            if (theEvent.preventDefault) {
+			                theEvent.preventDefault();
+			            }
+			        }
+			    }
+			</script>
 
 
 		</form>
