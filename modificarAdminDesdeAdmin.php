@@ -2,6 +2,8 @@
 	require 'conexion.php';
 	session_start();
 
+	$admin = $_GET['admin'];
+
 	$Nombre = $_POST['Nombre'];
 	$Apellido = $_POST['Apellido'];
 	$Fecha = $_POST['FechaDeNacimiento'];
@@ -15,11 +17,7 @@
 	$Tel = $_POST['Telefono'];
 	$rol = $_REQUEST['Rol'];
 
-
-
-	//echo $Nombre, $Apellido, $Fecha, $Dni, $Contraseña, $Email, $Provincia, $Localidad, $Calle, $Depto, $Cp, $Tel, $Plan;
-
-	$consulta = "UPDATE Administrador SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", rol ='".$rol."' WHERE DNI = ".$Dni.";";
+	$consulta = "UPDATE Administrador SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", rol ='".$rol."' WHERE DNI = ".$admin.";";
 
 	$resultado = mysqli_query($conexion,$consulta);
 

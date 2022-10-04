@@ -32,7 +32,7 @@
 			}	
 		?>
 
-       	<form action= "modificarAdminDesdeAdmin.php" method="POST">
+       	<form action= "modificarAdminDesdeAdmin.php<?php echo "?admin=$admin"?>" method="POST">
        		<p>Los campos marcados con * son obligatorios</p>
 
        		<label for="Nombre">* Nombre: </label><br>
