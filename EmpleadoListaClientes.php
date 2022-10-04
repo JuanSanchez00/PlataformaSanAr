@@ -5,10 +5,10 @@
 
 	<body>
 		<?php
-			$admin = $_GET['admin'];
+			$empleado = $_GET['empleado'];
 		?>
 		<h1>Listado Clientes</h1>
-	<form action="AdministradorModificaCliente.php<?php echo "?admin=$admin" ?>" method="POST">
+	<form action="EmpleadoModificaCliente.php<?php echo "?empleado=$empleado"?>" method="POST">
 		<label for="Clientes">Clientes: </label>
 		<select id="Clientes" name="Clientes" >
 			<?php
@@ -31,10 +31,10 @@
 			?>
 		</select required><br>
 		<p></p> 	
-		<button> Modificar Datos Basicos </button>
+		<button> Modificar datos básicos </button><br>
 	</form>
 
-		<button onclick = "location.href = 'PantallaAdministrador.php<?php echo "?admin=$admin" ?>'"> Cancelar </button> 
+		<button onclick = "location.href = 'PantallaEmpleado.php<?php echo "?empleado=$empleado" ?>'"> Cancelar </button> 
 	<body>
 
 </html>
