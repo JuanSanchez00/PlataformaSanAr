@@ -14,7 +14,7 @@
 			<button>Ingresar</button>
 		</form>
 		<p>¿No tiene un usuario?<p/>
-		<button onclick="location.href='RegistrarCliente.php'">Registrarse</button>
+		<button onclick="location.href='ClienteRegistraACliente.php'">Registrarse</button>
 		<button onclick="location.href='index.html'">Cancelar</button>
 	</body>
 </html>
