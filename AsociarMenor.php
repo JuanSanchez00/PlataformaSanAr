@@ -27,7 +27,6 @@
 				<option value="Hijo"> Sobrino/a </option>   
 			</select  required><br>
 
-			<button onclick="location.href='PantallaCliente.html'"> Cancelar </button>
 			<button for="Confirmar" name = "Cliente" value = <?php echo $cliente;?>> Confirmar </button><br>
 
 			<script type="text/javascript">
@@ -47,5 +46,7 @@
 
 
 		</form>
+
+		<button onclick="location.href='PantallaCliente.php?cliente=<?php echo $cliente?>'"> Cancelar </button>
 	</body>
 </html>
