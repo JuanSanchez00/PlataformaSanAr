@@ -13,7 +13,9 @@
 	$Depto = $_POST['DeptoCasa'];
 	$Cp = $_POST['CP'];
 	$Tel = $_POST['Telefono'];
-	$Plan = $_REQUEST['Rol'];
+	$rol = $_REQUEST['Rol'];
+
+
 
 	//echo $Nombre, $Apellido, $Fecha, $Dni, $Contraseña, $Email, $Provincia, $Localidad, $Calle, $Depto, $Cp, $Tel, $Plan;
 
