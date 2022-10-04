@@ -11,7 +11,7 @@
 
 		<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 		    <option value="" selected disabled>Operaciones</option>
-		    <option value="ModificarDatosCliente.html">Modificar datos Cliente</option>
+		    <option value="ClienteModificaSusDatos.php<?php echo"?cliente=$cliente"?>">Modificar mis datos básicos</option>
 		    <option value="AsociarMenor.php<?php echo"?cliente=$cliente"?>">Asociar menor a obra social</option>
 		</select>	
 

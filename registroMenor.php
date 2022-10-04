@@ -14,4 +14,8 @@
 
 	$resultado = mysqli_query($conexion,$consulta);
 
+	if ($resultado) {
+		echo "<script> alert('Usuario menor asociado correctamente.');  window.location='PantallaCliente.php?cliente=$dniTutor'; </script>";
+	}
+
 	?>
