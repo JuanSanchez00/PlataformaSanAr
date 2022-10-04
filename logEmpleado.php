@@ -10,7 +10,7 @@
 	$array = mysqli_fetch_array($consulta);
 
 	if($array['contar']>0){
-		header("location: PantallaEmpleado.html");
+		header("location: PantallaEmpleado.php");
 	}else{
 		echo "<script> alert('usuario invalido');  window.location='LoginEmpleado.php'; </script>";
 	}
