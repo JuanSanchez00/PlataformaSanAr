@@ -9,7 +9,7 @@
 			require 'conexion.php';
 			session_start();
 			$empleado=$_GET["empleado"];
-			$consulta = "SELECT nombre, apellido, fecha_nac, DNI, email, provincia, localidad, calle, depto, CP, tel, rol, sucursal FROM Empleado 
+			$consulta = "SELECT nombre, apellido, fecha_nac, DNI, email, provincia, localidad, calle, depto, CP, tel, rol FROM Empleado 
 			WHERE DNI = ".$empleado.";";
 
 			$resultado = mysqli_query($conexion,$consulta);
@@ -28,13 +28,12 @@
 					$Cp = $row['CP'];
 					$Tel = $row['tel'];
 					$Rol = $row['rol'];
-					$Sucursal = $row['sucursal'];
 				}
 			}	
 		?>
 
 
-       	<form action= "modificarClienteDesdeCliente.php" method="POST">
+       	<form action= "modificarEmpleadoDesdeEmpleado.php" method="POST">
        		<p>Los campos marcados con * son obligatorios</p>
 
        		<label for="Nombre">* Nombre: </label><br>
@@ -76,12 +75,11 @@
 			<label for="Telefono">* Teléfono: </label><br>
 			<input type="number" id="Telefono" name="Telefono" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Tel;?> required><br>
 
-			<label for="Plan" name="Plan">* Plan: </label><br>
-			<select name="Plan">
-				<?php
-					include("listadoPlanes.php")
-				?>
-			</select id="Plan" required><br>
+			<label for="Rol">* Rol: </label><br>
+			<select>
+				<option value="Rol1" selected>Rol1</option>
+ 				<option value="Rol2">Rol2</option>
+			</select id="Rol" name="Rol" required><br>
 
        		<script type="text/javascript">
 			    function SoloEnteroPositivo(e) {
@@ -98,10 +96,10 @@
 			    }
 			</script>
 
-			<button for="Confirmar" name = "Cliente" value = <?php echo $cliente;?>> Confirmar </button><br>
+			<button for="Confirmar" name = "Empleado" value = <?php echo $empleado;?>> Confirmar </button><br>
 
        	</form>
-       	<button onclick="location.href='PantallaCliente.php?cliente=<?php echo $cliente?>'"> Cancelar </button>
+       	<button onclick="location.href='PantallaEmpleado.php?empleado=<?php echo $empleado?>'"> Cancelar </button>
 
 
     </body>
