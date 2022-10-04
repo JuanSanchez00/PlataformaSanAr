@@ -10,7 +10,7 @@
 
 		<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 		    <option value="" selected disabled>Operaciones</option>
-		     <option value="CrearNuevoCliente.php">Crear Usuario Cliente</option>
+		     <option value="EmpleadoCreaNuevoCliente.php">Crear Usuario Cliente</option>
 		    <option value="ModificarDatosEmpleado.html">Modificar mis datos</option>
 		    <option value="listarClientes.php">Listar Clientes</option>
 		    
