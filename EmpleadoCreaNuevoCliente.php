@@ -4,6 +4,9 @@
 	</head>
 	<body>
 		<h1>Ingrese los datos del nuevo cliente</h1>
+		<?php
+			$empleado=$_GET["empleado"];
+		?>
 
         <form action="EmpleadoRegistraCliente.php" method="POST">
 			<label for="Nombre"> Nombre: </label>
@@ -56,8 +59,10 @@
 				?>
 			</select  required><br>
 
-			<button onclick="location.href='PantallaAdministrador.php'"> Cancelar </button>
-			<button onclick="location.href='LoginCliente.php'"> Confirmar </button>
+			
+			<button for="Confirmar" name = "Empleado" value = <?php echo $empleado;?>> Confirmar </button><br>
+		</form>
+		<button onclick="location.href='PantallaEmpleado.php?empleado=<?php echo $empleado?>'"> Cancelar </button>
 
 
 			

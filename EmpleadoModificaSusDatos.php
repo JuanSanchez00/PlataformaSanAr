@@ -33,7 +33,7 @@
 		?>
 
 
-       	<form action= "modificarEmpleadoDesdeEmpleado.php" method="POST">
+       	<form action= "ModificarEmpleadoDesdeEmpleado.php" method="POST">
        		<p>Los campos marcados con * son obligatorios</p>
 
        		<label for="Nombre">* Nombre: </label><br>

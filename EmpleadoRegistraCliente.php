@@ -2,6 +2,7 @@
 	require 'conexion.php';
 	session_start();
 
+	$empleado = $_POST['Empleado'];
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellido'];
 	$fecha = $_POST['Fecha'];
@@ -24,7 +25,7 @@
 	$resultado = mysqli_query($conexion,$consulta);
 	
 	if ($resultado) {
-		echo "<script> alert('Cliente creado correctamente.');  window.location='PantallaEmpleado.php'; </script>";
+		echo "<script> alert('Cliente creado correctamente.');  window.location='PantallaEmpleado.php?empleado=$empleado'; </script>";
 	}
 
 	?>

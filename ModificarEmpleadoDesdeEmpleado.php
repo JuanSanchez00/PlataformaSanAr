@@ -2,7 +2,7 @@
 	require 'conexion.php';
 	session_start();
 
-	$Empleado = $_POST['empleado'];
+	$Empleado = $_POST['Empleado'];
 	$Nombre = $_POST['Nombre'];
 	$Apellido = $_POST['Apellido'];
 	$Fecha = $_POST['FechaDeNacimiento'];
