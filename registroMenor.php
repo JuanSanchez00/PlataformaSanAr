@@ -7,8 +7,7 @@
 	$fecha = $_POST['Fecha'];
 	$dni = $_POST['DNI'];
 	$relacion = $_POST['Relacion'];
-	$dniTutor = "aca va el dni del tutor"
-
+	$dniTutor = $_POST['Cliente'];
 
 
 	$consulta = "INSERT INTO Cliente_menor VALUES ('".$nombre."', '".$apellido."', '".$fecha."', '".$dni."', '".$relacion."', '".$dniTutor."')";
