@@ -22,6 +22,9 @@
 	$consulta = "INSERT INTO Cliente VALUES ('".$nombre."', '".$apellido."', ".$fecha.", ".$dni.", '".$password."', '".$email."', '".$provincia."', '".$localidad."', '".$calle." ".$numero."', '".$depto."', ".$cp.", ".$telefono.", '".$plan."')";
 
 	$resultado = mysqli_query($conexion,$consulta);
-	include 'PantallaCliente.html'
+	
+	if ($resultado) {
+		echo "<script> alert('Usuario creado correctamente.');  window.location='LoginCliente.php'; </script>";
+	}
 
 	?>
