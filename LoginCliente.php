@@ -15,6 +15,6 @@
 		</form>
 		<p>¿No tiene un usuario?<p/>
 		<button onclick="location.href='RegistrarCliente.php'">Registrarse</button>
-		<button onclick="location.href='index.html">Cancelar</button>
+		<button onclick="location.href='index.html'">Cancelar</button>
 	</body>
 </html>
