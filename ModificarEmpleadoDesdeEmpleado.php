@@ -17,11 +17,11 @@
 	$Rol = $_POST['Plan'];
 
 
-	$consulta = "UPDATE empleado SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", rol ='".$Rol."' WHERE DNI = ".$Dni.";";
+	$consulta = "UPDATE empleado SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", rol ='".$Rol."' WHERE DNI = ".$Empleado.";";
 
 	$resultado = mysqli_query($conexion,$consulta);
 
 	if($resultado){
-		echo "<script> alert('Datos básicos modificados correctamente.');  window.location='PantallaEmpleado.php?empleado=$Empleado'; </script>";
+		echo "<script> alert('Datos básicos modificados correctamente.');  window.location='PantallaEmpleado.php?empleado=$Dni'; </script>";
 	}
 ?>
