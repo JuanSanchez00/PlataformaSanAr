@@ -15,10 +15,11 @@
 	$Cp = $_POST['CP'];
 	$Tel = $_POST['Telefono'];
 	$Rol = $_REQUEST['Rol'];
+	$DNIViejo = $_POST['DNIViejo'];
 
 	//echo $Nombre, $Apellido, $Fecha, $Dni, $Contraseña, $Email, $Provincia, $Localidad, $Calle, $Depto, $Cp, $Tel, $Plan;
 
-	$consulta = "UPDATE empleado SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", rol ='".$Rol."' WHERE DNI = ".$Dni.";";
+	$consulta = "UPDATE empleado SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", rol ='".$Rol."' WHERE DNI = ".$DNIViejo.";";
 
 	$resultado = mysqli_query($conexion,$consulta);
 

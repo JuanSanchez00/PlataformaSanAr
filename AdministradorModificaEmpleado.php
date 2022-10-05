@@ -97,7 +97,7 @@
 			    }
 			</script>
 
-			<input type="submit" value="Confirmar">
+			<br><button name = "DNIViejo" value = '<?php echo $Dni ?>'> Confirmar </button> 
 
        	</form>
 
