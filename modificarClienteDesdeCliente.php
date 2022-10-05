@@ -17,11 +17,11 @@
 	$Plan = $_POST['Plan'];
 
 
-	$consulta = "UPDATE cliente SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", plan ='".$Plan."' WHERE DNI = ".$Dni.";";
+	$consulta = "UPDATE cliente SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", plan ='".$Plan."' WHERE DNI = ".$Cliente.";";
 
 	$resultado = mysqli_query($conexion,$consulta);
 
 	if($resultado){
-		echo "<script> alert('Datos básicos modificados correctamente.');  window.location='PantallaCliente.php?cliente=$Cliente'; </script>";
+		echo "<script> alert('Datos básicos modificados correctamente.');  window.location='PantallaCliente.php?cliente=$Dni'; </script>";
 	}
 ?>
