@@ -46,9 +46,6 @@
 			<label for="DNI">* DNI: </label><br>
 			<input type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Dni;?> required disable><br>
 
-			<label for="Contraseña">* Contraseña: </label><br>
-			<input type="text" id="Contraseña" name="Contraseña" required><br>
-
 			<label for="Email">* Email: </label><br>
 			<input type="text" id="Email" name="Email" value = <?php echo $Email;?> required><br>
 
@@ -98,7 +95,7 @@
 			    }
 			</script>
 
-			<button  name = "Empleado" value = <?php echo $empleado;?>> Confirmar </button><br>
+			<br><button name = "DNIViejo" value = '<?php echo $Dni ?>'> Confirmar </button> 
 
        	</form>
 
