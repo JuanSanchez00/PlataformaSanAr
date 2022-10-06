@@ -76,11 +76,7 @@
 			<input type="number" id="Telefono" name="Telefono" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Tel;?> required><br>
 
 			<label for="Plan" name="Plan">* Plan: </label><br>
-			<select name="Plan">
-				<?php
-					include("listadoPlanes.php")
-				?>
-			</select id="Plan" required><br>
+			<input type="text" name="Plan" value=<?php echo $Plan;?> readonly><br>
 
        		<script type="text/javascript">
 			    function SoloEnteroPositivo(e) {
