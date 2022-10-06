@@ -37,16 +37,16 @@
        		<p>Los campos marcados con * son obligatorios</p>
 
        		<label for="Nombre">* Nombre: </label><br>
-			<input type="text" id="Nombre" name="Nombre" value = <?php echo $Nombre;?> required><br>
+			<input type="text" id="Nombre" name="Nombre" value = <?php echo $Nombre;?> readonly><br>
 
 			<label for="Apellido">* Apellido: </label><br>
-			<input type="text" id="Apellido" name="Apellido" value = <?php echo $Apellido;?> required><br>
+			<input type="text" id="Apellido" name="Apellido" value = <?php echo $Apellido;?> readonly><br>
 
 			<label for="FechaDeNacimiento">* Fecha de Nacimiento: </label><br>
-			<input type="date" id="FechaDeNacimiento" name="FechaDeNacimiento" value = <?php echo $Fecha;?>required><br>
+			<input type="date" id="FechaDeNacimiento" name="FechaDeNacimiento" value = <?php echo $Fecha;?>readonly><br>
 
 			<label for="DNI">* DNI: </label><br>
-			<input type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Dni;?> required><br>
+			<input type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Dni;?> readonly><br>
 
 			<label for="Email">* Email: </label><br>
 			<input type="text" id="Email" name="Email" value = <?php echo $Email;?> required><br>
@@ -76,10 +76,7 @@
 			<input type="number" id="Telefono" name="Telefono" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Tel;?> required><br>
 
 			<label for="Rol">* Rol: </label><br>
-			<select>
-				<option value="Rol1" selected>Rol1</option>
- 				<option value="Rol2">Rol2</option>
-			</select id="Rol" name="Rol" required><br>
+			<input type="text" name="Rol" value=<?php echo $Rol;?> readonly><br>
 
        		<script type="text/javascript">
 			    function SoloEnteroPositivo(e) {
@@ -96,6 +93,7 @@
 			    }
 			</script>
 
+			<br>
 			<button for="Confirmar" name = "Empleado" value = <?php echo $empleado;?>> Confirmar </button><br>
 
        	</form>
