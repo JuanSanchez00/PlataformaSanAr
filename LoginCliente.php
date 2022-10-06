@@ -9,7 +9,7 @@
 			<p>DNI:</p>
 			<input type="text" name = "nombreCliente" required>
 			<p>Contraseña:</p>
-			<input type="text" name = "passCliente" required>
+			<input type="password" name = "passCliente" required>
 			<p> </p>
 			<button>Ingresar</button>
 		</form>
