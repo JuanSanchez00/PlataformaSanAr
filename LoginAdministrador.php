@@ -7,7 +7,7 @@
 		<p>SanAr<p/>
 		<form action="logAdmin.php" method="POST">
 			<p>Ingrese sus datos: </p>
-			<p>Nombre de usuario:</p>
+			<p>DNI:</p>
 			<input type="text" name = "nombreAdmin"> 
 			<p>Contraseña:</p>
 			<input type="password" name = "passAdmin">

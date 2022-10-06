@@ -6,7 +6,7 @@
 		<p>SanAr<p/>
 		<form action="logEmpleado.php" method="POST">
 			<p>Ingrese sus datos: </p>
-			<p>Nombre de usuario:</p>
+			<p>Nombre de usuario (DNI):</p>
 			<input type="text" name = "nombreEmpleado" required>
 			<p>Contraseña:</p>
 			<input type="password" name = "passEmpleado" required>	
