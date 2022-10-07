@@ -32,7 +32,7 @@
 		<title>Modificar Datos Cliente</title>
 	</head>
 	<body>
-		<h1>Modificar datos basicos</h1>
+		<h1>Modificar datos basicos <?php echo $Fecha?></h1>
 
        	<form action= "modificarClienteDesdeAdmin.php<?php echo "?admin=$admin"?>" method="POST">
        		<p>Los campos marcados con * son obligatorios</p>

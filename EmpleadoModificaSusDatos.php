@@ -43,7 +43,7 @@
 			<input type="text" id="Apellido" name="Apellido" value = <?php echo $Apellido;?> readonly><br>
 
 			<label for="FechaDeNacimiento">* Fecha de Nacimiento: </label><br>
-			<input type="date" id="FechaDeNacimiento" name="FechaDeNacimiento" value = <?php echo $Fecha;?>readonly><br>
+			<input type="date" id="FechaDeNacimiento" name="FechaDeNacimiento" value = <?php echo $Fecha;?> readonly><br>
 
 			<label for="DNI">* DNI: </label><br>
 			<input type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Dni;?> readonly><br>
