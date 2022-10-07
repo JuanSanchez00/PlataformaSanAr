@@ -77,12 +77,12 @@
 			<input type="number" id="Telefono" name="Telefono" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Tel;?> required><br>
 
 			<label for="Rol">* Rol: </label><br>
-			<select id="Rol" name="Rol" >
+			<select id="Rol" name="Rol" required>
                     <option value="" selected disabled>Roles</option>
                     <option value="Jefe de Area" >Jefe de Area</option>
                     <option value="Administrativo">Administrativo</option>
                     <option value="Administrador">Administrador</option>
-                </select required><br>
+                </select ><br>
 
 
        		<script type="text/javascript">
