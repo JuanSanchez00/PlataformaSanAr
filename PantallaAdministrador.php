@@ -6,6 +6,7 @@
 		<?php
 			require 'conexion.php';
 			session_start();
+			$admin=$_GET["admin"];
 		?>
 		<h1>SanAr</h1>
 		<h2>Usuario Administrador</h2>
