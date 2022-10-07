@@ -7,7 +7,7 @@
 		<form action="logCliente.php" method="POST">
 			<p>Ingrese sus datos: </p>
 			<p>DNI:</p>
-			<input type="text" name = "nombreCliente" required>
+			<input type="number" id="DNI" name="nombreCliente" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 			<p>Contraseña:</p>
 			<input type="password" name = "passCliente" required>
 			<p> </p>

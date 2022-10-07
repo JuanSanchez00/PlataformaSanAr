@@ -8,7 +8,7 @@
 			session_start();
 		?>
 		<h1>SanAr</h1>
-		<h2>Usuario Administrador <?php $admin=$_GET["admin"]; echo $admin; ?> </h2>
+		<h2>Usuario Administrador</h2>
 
 		<button onclick="location.href='index.html'"> Inicio </button>
 		
