@@ -14,7 +14,7 @@
 			<input type="text" id="Apellido" name="Apellido" required><br>
 
 			<label for="Fecha de nacimiento"> Fecha de nacimiento: </label>
-			<input type="date" id="Fecha de nacimiento" name="Fecha" value="2000-01-01"><br>
+			<input type="date" id="Fecha de nacimiento" name="Fecha" required><br>
 
 			<label for="DNI"> DNI: </label>
 			<input type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>

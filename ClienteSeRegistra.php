@@ -27,7 +27,7 @@
 		echo "<script> alert('DNI ya registrado en el sistema. Por favor ingrese otro.');  window.location='ClienteRegistraACliente.php'; </script>";
 	}
 	else {
-		$consulta = "INSERT INTO Cliente VALUES ('".$nombre."', '".$apellido."', ".$fecha.", ".$dni.", '".$password."', '".$email."', '".$provincia."', '".$localidad."', '".$calle." ".$numero."', '".$depto."', ".$cp.", ".$telefono.", '".$plan."')";
+		$consulta = "INSERT INTO Cliente VALUES ('".$nombre."', '".$apellido."', '".$fecha."', ".$dni.", '".$password."', '".$email."', '".$provincia."', '".$localidad."', '".$calle." ".$numero."', '".$depto."', ".$cp.", ".$telefono.", '".$plan."')";
 
 	$resultado = mysqli_query($conexion,$consulta);
 	
