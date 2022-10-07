@@ -11,7 +11,7 @@
         <form action="crearUsuarioEmpleado.php<?php echo "?admin=$admin"?>" method="POST">
 
                 <label for="Nombre"> Nombre: </label>
-                <input type="text" id="Nombre" name="Nombre" ><br>
+                <input type="text" id="Nombre" name="Nombre" required><br>
     
                 <label for="Apellido"> Apellido: </label>
                 <input type="text" id="Apellido" name="Apellido" required><br>
