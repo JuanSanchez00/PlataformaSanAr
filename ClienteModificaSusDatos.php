@@ -30,6 +30,8 @@
 					$Plan = $row['plan'];
 				}
 			}	
+
+			echo $Fecha;
 		?>
 
 

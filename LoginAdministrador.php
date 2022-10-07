@@ -8,9 +8,9 @@
 		<form action="logAdmin.php" method="POST">
 			<p>Ingrese sus datos: </p>
 			<p>DNI:</p>
-			<input type="text" name = "nombreAdmin"> 
+			<input type="text" name = "nombreAdmin" required> 
 			<p>Contraseña:</p>
-			<input type="password" name = "passAdmin">
+			<input type="password" name = "passAdmin" required>
 			<p></p>
 			<button> Ingresar </button>
 		</form>

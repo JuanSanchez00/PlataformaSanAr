@@ -11,7 +11,7 @@
         <form action="crearUsuarioEmpleado.php<?php echo "?admin=$admin"?>" method="POST">
 
                 <label for="Nombre"> Nombre: </label>
-                <input type="text" id="Nombre" name="Nombre" required><br>
+                <input type="text" id="Nombre" name="Nombre" ><br>
     
                 <label for="Apellido"> Apellido: </label>
                 <input type="text" id="Apellido" name="Apellido" required><br>
@@ -67,7 +67,7 @@
                     <option value="Cordoba">Cordoba</option>
                 </select required><br>
 
-            <br><button onclick="location.href='PantallaAdministrador.html'"> Aceptar </button><br>
+            <br><button onclick="location.href='PantallaAdministrador.php<?php echo "?admin=$admin" ?>'"> Aceptar </button><br>
 
 		</form>
 
