@@ -31,16 +31,16 @@
 			<input type="text" id="E-Mail" name="E-Mail" required><br>
 
 			<label for="Provincia"> Provincia: </label>
-			<select name="Provincia">
+			<select name="Provincia" required>
 				<option value="BuenosAires" selected="">Buenos Aires</option>
  				<option value="Mendoza">Mendoza</option>
-			</select id="Provincia" name="Provincia" required><br>
+			</select id="Provincia" name="Provincia" ><br>
 
 			<label for="Localidad"> Localidad: </label>
-			<select name="Localidad">
+			<select name="Localidad" required>
 				<option value="BahiaBlanca">Bahía Blanca</option>
  				<option value="Mendoza">Mendoza</option>
-			</select id="Localidad" name="Localidad" required><br>
+			</select id="Localidad" name="Localidad" ><br>
 
 			<label for="Calle"> Calle: </label>
 			<input type="text" id="Calle" name="Calle" required>

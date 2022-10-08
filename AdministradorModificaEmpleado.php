@@ -78,7 +78,7 @@
 
 			<label for="Rol">* Rol: </label><br>
 			<select id="Rol" name="Rol" required>
-                    <option value="" selected disabled> <?php echo $Rol;?> </option>
+                    <option value="" selected disabled> Rol </option>
                     <option value="Jefe de Area" >Jefe de Area</option>
                     <option value="Administrativo">Administrativo</option>
                     <option value="Administrador">Administrador</option>

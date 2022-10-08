@@ -17,7 +17,7 @@
                 <input type="text" id="Apellido" name="Apellido" required><br>
     
                 <label for="Fecha de nacimiento"> Fecha de nacimiento: </label>
-                <input type="date" id="Fecha de nacimiento" name="Fecha"><br>
+                <input type="date" id="Fecha de nacimiento" name="Fecha" required><br>
     
                 <label for="DNI"> DNI: </label>
                 <input type="number" id="DNI" name="DNI" required><br>
@@ -32,10 +32,16 @@
                 <input type="text" id="E-Mail" name="E-Mail" required><br>
     
                 <label for="Provincia"> Provincia: </label>
-                <input type="text" id="Provincia" name="Provincia" required><br>
-    
+                <select name="Provincia" required>
+                    <option value="BuenosAires" selected="">Buenos Aires</option>
+                    <option value="Mendoza">Mendoza</option>
+                </select id="Provincia" name="Provincia" ><br>
+
                 <label for="Localidad"> Localidad: </label>
-                <input type="text" id="Localidad" name="Localidad" required><br>
+                <select name="Localidad" required>
+                    <option value="BahiaBlanca">Bahía Blanca</option>
+                    <option value="Mendoza">Mendoza</option>
+                </select id="Localidad" name="Localidad" ><br>
     
                 <label for="Calle"> Calle: </label>
                 <input type="text" id="Calle" name="Calle" required>
@@ -52,20 +58,20 @@
                 <input type="number" id="Telefono" name="Telefono" required><br>
     
                 <label for="Rol"> Rol: </label>
-                <select id="Rol" name="Rol" >
+                <select id="Rol" name="Rol" required>
                     <option value="" selected disabled>Roles</option>
                     <option value="Jefe de Area" >Jefe de Area</option>
                     <option value="Administrativo">Administrativo</option>
                     <option value="Administrador">Administrador</option>
-                </select required><br>
+                </select ><br>
 
                 <label for="Sucursal"> Sucursal: </label>
-                <select id="Sucursal" name="Sucursal" >
+                <select id="Sucursal" name="Sucursal" required>
                     <option value="" selected disabled>Sucursales</option>
                     <option value="Capital Federal" >Capital Federal</option>
                     <option value="Mar del Plata">Mar del Plata</option>
                     <option value="Cordoba">Cordoba</option>
-                </select required><br>
+                </select ><br>
 
             <br><button> Aceptar </button><br>
 

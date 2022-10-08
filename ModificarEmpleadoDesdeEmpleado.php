@@ -14,7 +14,7 @@
 	$Depto = $_POST['DeptoCasa'];
 	$Cp = $_POST['CP'];
 	$Tel = $_POST['Telefono'];
-	$Rol = $_POST['Plan'];
+	$Rol = $_POST['Rol'];
 
 
 	$consulta = "UPDATE empleado SET nombre = '".$Nombre."', apellido = '".$Apellido."', fecha_nac = '".$Fecha."', DNI = ".$Dni.", email = '".$Email."', provincia = '".$Provincia."', localidad = '".$Localidad."', calle = '".$Calle."', depto = '".$Depto."', CP = ".$Cp.", tel = ".$Tel.", rol ='".$Rol."' WHERE DNI = ".$Empleado.";";
