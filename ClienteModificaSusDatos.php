@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
 		<title>Modificar Datos Cliente</title>
 	</head>
 	<body>
@@ -78,7 +79,7 @@
 			<input type="number" id="Telefono" name="Telefono" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Tel;?> required><br>
 
 			<label for="Plan" name="Plan">* Plan: </label><br>
-			<input type="text" name="Plan" value=<?php echo $Plan;?> readonly><br>
+			<input class="soloLectura" type="text" name="Plan" value=<?php echo $Plan;?> readonly><br>
 
        		<script type="text/javascript">
 			    function SoloEnteroPositivo(e) {
