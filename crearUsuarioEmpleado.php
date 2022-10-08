@@ -31,9 +31,10 @@
 		
 		if($rol == "Administrador"){
 			$consulta = "INSERT INTO Administrador VALUES ('".$nombre."', '".$apellido."', '".$fecha."', ".$dni.", '".$password."', '".$email."', '".$provincia."', '".$localidad."', '".$calle." ".$numero."', '".$depto."', '".$cp."', '".$telefono."', '".$rol."', '".$sucursal."')";
-		}else{
-			$consulta = "INSERT INTO Empleado VALUES ('".$nombre."', '".$apellido."', '".$fecha."', ".$dni.", '".$password."', '".$email."', '".$provincia."', '".$localidad."', '".$calle." ".$numero."', '".$depto."', '".$cp."', '".$telefono."', '".$rol."', '".$sucursal."')";
+				$resultado = mysqli_query($conexion,$consulta);
 		}
+		
+		$consulta = "INSERT INTO Empleado VALUES ('".$nombre."', '".$apellido."', '".$fecha."', ".$dni.", '".$password."', '".$email."', '".$provincia."', '".$localidad."', '".$calle." ".$numero."', '".$depto."', '".$cp."', '".$telefono."', '".$rol."', '".$sucursal."')";
 
 		$resultado = mysqli_query($conexion,$consulta);
 
