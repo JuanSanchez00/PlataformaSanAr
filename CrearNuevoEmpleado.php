@@ -26,7 +26,7 @@
                 <input type="password" id="Contraseña" name="Contraseña" required><br>
     
                 <label for="Confirme su contraseña"> Confirme su contraseña: </label>
-                <input type="password" id="Confirme su contraseña" name="Confirme su contraseña" required><br>
+                <input type="password" id="Confirme su contraseña" name="Confirme su contraseña" onchange="return validadContraseña(event);"ondrop="return false;" onpaste="return false;" required><br>
     
                 <label for="E-Mail"> E-Mail: </label>
                 <input type="text" id="E-Mail" name="E-Mail" required><br>
@@ -78,6 +78,20 @@
 		</form>
 
         <button onclick = "location.href = 'PantallaAdministrador.php<?php echo "?admin=$admin" ?>'"> Cancelar </button> 
+
+        <script type="text/javascript">
+            function validadContraseña(){
+					contraseña = document.getElementById('Contraseña').value;
+					contraseñaAConfirmar = document.getElementById('Confirme su contraseña').value;
+
+					if(contraseña!=contraseñaAConfirmar){
+						alert("Las contraseñas ingresadas no coinciden");
+						document.getElementById('Confirme su contraseña').value = "";
+					}
+
+				}
+
+		</script>
 			
 	</body>
 </html>
