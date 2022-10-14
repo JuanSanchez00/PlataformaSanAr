@@ -20,7 +20,7 @@
 			<input type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 
 			<label for="Contraseña"> Contraseña: </label>
-			<input type="password" id="Contraseña" name="Contraseña" required><br>
+            <input type="password" id="Contraseña" name="Contraseña" pattern="(?=.*\d)(?=.*[A-Z]).{1,}" title="Debe contener una mayuscula y un numero" required><br>
 
 			<label for="Confirme su contraseña"> Confirme su contraseña: </label>
 			<input type="password" id="Confirme su contraseña" name="Confirme su contraseña" onchange="return validadContraseña(event);"ondrop="return false;" onpaste="return false;" required><br>
