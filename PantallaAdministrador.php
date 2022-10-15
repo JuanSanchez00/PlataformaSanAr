@@ -22,6 +22,7 @@
 			    <option value="listarEmpleados.php<?php echo"?admin=$admin"?>">Listar Empleados</option>
 				<option value="CrearNuevoEmpleado.php<?php echo"?admin=$admin"?>">Crear nuevo empleado</option>
 				<option value="CrearNuevoCliente.php<?php echo"?admin=$admin"?>">Crear nuevo cliente</option>
+				<option value="listarPlanes.php<?php echo"?admin=$admin"?>">Listar Planes</option>
 			</select>	
 		</form>
 
