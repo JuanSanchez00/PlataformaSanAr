@@ -7,7 +7,7 @@
 			require 'conexion.php';
 			session_start();
 
-			$consulta = "SELECT nombre, apellido, DNI FROM Empleado";
+			$consulta = "SELECT nombre, apellido, DNI FROM Empleado ORDER BY nombre ASC";
 			$resultado = mysqli_query($conexion,$consulta);
 			if ($resultado) {
 				while ($row = $resultado->fetch_array()) {
