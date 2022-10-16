@@ -15,6 +15,8 @@
 		    <option value="AsociarMenor.php<?php echo"?cliente=$cliente"?>">Asociar menor a obra social</option>
 		    <option value="ClienteModificaSusDatosSeguridad.php<?php echo"?cliente=$cliente"?>">Modificar mis datos de seguridad</option>
 		    <option value="ClienteSolicitaReintegro.php<?php echo"?cliente=$cliente"?>">Solicitar reintegro</option>
+			<option value="ClienteSolicitaPrestacion.php<?php echo"?cliente=$cliente"?>">Solicitar prestacion</option>
+
 		</select>	
 
 		<button onclick="location.href='LoginCliente.php'"> Cerrar Sesión </button>

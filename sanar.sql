@@ -149,3 +149,30 @@ CREATE TABLE Solicitud_reintegro_prestacion_institucion(
 	CONSTRAINT pk_Solicitud_reintegro_prestacion_institucion
 	PRIMARY KEY (id)
 ) ENGINE=InnoDB;
+
+
+CREATE TABLE Solicitud_prestacion_institucion(
+	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	nombre_institucion VARCHAR(100),
+	direccion_institucion VARCHAR(100),
+	fecha DATE NOT NULL,
+	orden_medica longblob NOT NULL,
+	historia_clinica longblob,
+	observaciones VARCHAR(100),
+
+	CONSTRAINT pk_Solicitud_prestacion_institucion
+	PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE Solicitud_prestacion_profesional(
+	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+	nombre VARCHAR(45) NOT NULL,
+	apellido VARCHAR(45) NOT NULL,
+	fecha DATE NOT NULL,
+	orden_medica longblob NOT NULL,
+	historia_clinica longblob,
+	observaciones VARCHAR(100),
+
+	CONSTRAINT pk_Solicitud_prestacion_profesional
+	PRIMARY KEY (id)
+) ENGINE=InnoDB;
