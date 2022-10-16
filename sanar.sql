@@ -110,3 +110,42 @@ CREATE TABLE Cliente_menor(
    	ON DELETE RESTRICT ON UPDATE CASCADE
 
 ) ENGINE=InnoDB;
+
+CREATE TABLE Solicitud_reintegro_compra(
+	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
+	fecha DATE NOT NULL,
+	orden_medica longblob NOT NULL,
+	factura longblob NOT NULL,
+	historia_clinica longblob,
+	observaciones VARCHAR(100),
+
+	CONSTRAINT pk_Solicitud_reintegro_compra
+	PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE Solicitud_reintegro_prestacion_profesional(
+	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
+	fecha DATE NOT NULL,
+	orden_medica longblob NOT NULL,
+	factura longblob NOT NULL,
+	historia_clinica longblob,
+	observaciones VARCHAR(100),
+
+	CONSTRAINT pk_Solicitud_reintegro_prestacion_profesional
+	PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE Solicitud_reintegro_prestacion_institucion(
+	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
+	fecha DATE NOT NULL,
+	orden_medica longblob NOT NULL,
+	factura longblob NOT NULL,
+	historia_clinica longblob,
+	observaciones VARCHAR(100),
+
+	CONSTRAINT pk_Solicitud_reintegro_prestacion_institucion
+	PRIMARY KEY (id)
+) ENGINE=InnoDB;

@@ -3,14 +3,15 @@
 		<title>Solicitud reintegro por prestación institución</title>
 	</head>
 	<body>
-		<?php $cliente=$_GET["cliente"];?>
+		<?php $cliente = $_GET['cliente'];?>
 		<h1>SOLICITUD REINTEGRO</h1>
 		<h3>Prestación - Institución</h3>
 		<p>Recuerde que todos los datos marcados con asteristco (*) deben completarse obligatoriamente.</p>
 
-		<form type="POST" enctype="multipart/formdata">
-			<label for="CUIT/CUIL"> CUIT/CUIL(*): </label>
-			<input type="number" id="CUIT/CUIL" name="CUIT/CUIL" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
+
+		<form  method="POST" enctype="multipart/formdata" action="solicitarReintegroPrestacionInstituto.php<?php echo "?cliente=$cliente"?>">
+			<label for="CUITCUIL"> CUIT/CUIL(*): </label>
+			<input type="number" id="CUITCUIL" name="CUITCUIL" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 			<label for="Fecha"> Fecha(*): </label>
 			<input type="date" id="Fecha" name="Fecha" required><br>
 			<label for="OrdenMedica"> Orden Médica(*): </label>
@@ -21,6 +22,7 @@
 			<input type="file" name="HistoriaClinica"/><br>
 			<label for="Observaciones"> Observaciones: </label>
 			<input type="text" name="Observaciones"/>
+			<br><button>Confirmar</button>
 		</form>
 		
 		<br> <br> <button onclick="location.href='ClienteSolicitaReintegro.php<?php echo"?cliente=$cliente"?>'"> Cancelar </button>	
