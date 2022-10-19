@@ -24,10 +24,10 @@
             <input type="file" id="OrdenMedica" name="OrdenMedica" required /><br>
 
             <label for="HistoriaClinica">* Historia clinica: </label><br>
-            <input type="file" id="HistoriaClinica" name="HistoriaClinica" required /><br>
+            <input type="file" id="HistoriaClinica" name="HistoriaClinica"  /><br>
 
             <label for="Observaciones">* Observaciones: </label><br>
-			<input type="text" id="Observaciones" name="Observaciones" required><br>
+			<input type="text" id="Observaciones" name="Observaciones" ><br>
 
             <button>Confirmar</button>
 
