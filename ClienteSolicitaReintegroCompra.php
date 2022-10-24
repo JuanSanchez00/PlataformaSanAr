@@ -6,7 +6,7 @@
 		<?php $cliente=$_GET["cliente"];?>
 		<h1>SOLICITUD REINTEGRO</h1>
 		<h3>Prestación - Compra</h3>
-		<p>Recuerde que todos los datos marcados con asteristco (*) deben completarse obligatoriamente.</p>
+		<p>Los campos con un (*) son obligatorios.</p>
 
 		<form  method="POST" enctype="multipart/formdata" action="solicitarReintegroCompra.php<?php echo "?cliente=$cliente"?>">
 			<label for="CUITCUIL"> CUIT/CUIL(*): </label>

@@ -4,8 +4,8 @@
 		<title>Modificar Datos Cliente</title>
 	</head>
 	<body>
-		<h1>Modificar datos basicos</h1>
-
+		<h1>Modificar datos de seguridad</h1>
+		<p>Los campos con un (*) son obligatorios.</p>
 		<?php
 			require 'conexion.php';
 			session_start();
@@ -35,16 +35,15 @@
 
 
        	<form action= "modificarSeguridadClienteDesdeCliente.php" method="POST">
-       		<p>Los campos marcados con * son obligatorios</p>
 
-       		<label for="Nombre">* Nombre: </label>
+       		<label for="Nombre">Nombre: </label>
 			<input class="SoloLectura" type="text" id="Nombre" name="Nombre" value = <?php echo $Nombre;?> readonly><br><br>
 
-			<label for="ContraseñaActual"> Contraseña Actual: </label>
-			<input type="password" id="ContraseñaActual" name="ContraseñaActual"><br><br>
+			<label for="ContraseñaActual"> Contraseña Actual(*): </label>
+			<input type="password" id="ContraseñaActual" name="ContraseñaActual" required><br><br>
 
-			<label for="ContraseñaNueva"> Contraseña Nueva: </label>
-			<input type="password" id="ContraseñaNueva" name="ContraseñaNueva" pattern="(?=.*\d)(?=.*[A-Z]).{1,}" title="Debe contener una mayuscula y un numero"><br><br>
+			<label for="ContraseñaNueva"> Contraseña Nueva(*): </label>
+			<input type="password" id="ContraseñaNueva" name="ContraseñaNueva" pattern="(?=.*\d)(?=.*[A-Z]).{1,}" title="Debe contener una mayuscula y un numero" required><br><br>
 
 			<button for="Confirmar" name = "Cliente" value = <?php echo $cliente;?>> Confirmar </button><br>
 

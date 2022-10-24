@@ -6,21 +6,22 @@
 		<p>SanAr<p/>
 		<p>Ingrese sus datos para registrarse: </p>	
 		<?php $cliente=$_GET["cliente"];?>
+		<p>Los campos con un (*) son obligatorios.</p>
 
 		<form action="registroMenor.php" method="POST">
-			<label for="Nombre"> Nombre: </label>
+			<label for="Nombre"> Nombre(*): </label>
 			<input type="text" id="Nombre" name="Nombre" required><br>
 
-			<label for="Apellido"> Apellido: </label>
+			<label for="Apellido"> Apellido(*): </label>
 			<input type="text" id="Apellido" name="Apellido" required><br>
 
-			<label for="Fecha de nacimiento"> Fecha de nacimiento: </label>
+			<label for="Fecha de nacimiento"> Fecha de nacimiento(*): </label>
 			<input type="date" id="FechaNaci" name="Fecha"  onchange="return validarFecha(event);"ondrop="return false;" onpaste="return false;" required><br>
 
-			<label for="DNI"> DNI: </label>
+			<label for="DNI"> DNI(*): </label>
 			<input type="number" id="DNI" name="DNI" min="1" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 
-			<label for="Relacion"> Relacion con el asociado: </label>
+			<label for="Relacion"> Relacion con el asociado(*): </label>
 			<select id="Relacion" name="Relacion">
 				<option value="Hijo"> Hijo/a </option>
 				<option value="Hijo"> Nieto/a </option>
