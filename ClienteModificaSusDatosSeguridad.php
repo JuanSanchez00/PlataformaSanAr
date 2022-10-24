@@ -36,8 +36,8 @@
 
        	<form action= "modificarSeguridadClienteDesdeCliente.php" method="POST">
 
-       		<label for="Nombre">Nombre: </label>
-			<input class="SoloLectura" type="text" id="Nombre" name="Nombre" value = <?php echo $Nombre;?> readonly><br><br>
+       		<label for="Nombre">DNI: </label>
+			<input class="SoloLectura" type="text" id="Nombre" name="Nombre" value = <?php echo $Dni;?> readonly><br><br>
 
 			<label for="ContraseñaActual"> Contraseña Actual(*): </label>
 			<input type="password" id="ContraseñaActual" name="ContraseñaActual" required><br><br>

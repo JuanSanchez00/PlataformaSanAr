@@ -14,7 +14,7 @@
 	if($array['contar'] > 0){
 		$consulta = "UPDATE cliente SET password = '".$PassNueva."' WHERE DNI = ".$Cliente.";";
 		$resultado = mysqli_query($conexion,$consulta);
-		echo "<script> alert('Contraseña modificada correctamente.');  window.location='PantallaEmpleado.php?empleado=$Cliente'; </script>";
+		echo "<script> alert('Contraseña modificada correctamente.');  window.location='PantallaCliente.php?cliente=$Cliente'; </script>";
 	}else{
 		echo "<script> alert('La Contraseña actual es erronea. Porfavor, intente de nuevo.');  window.location='ClienteModificaSusDatosSeguridad.php?cliente=$Cliente'; </script>";
 	}
