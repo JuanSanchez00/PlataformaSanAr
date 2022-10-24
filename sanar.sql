@@ -113,6 +113,8 @@ CREATE TABLE Cliente_menor(
 
 CREATE TABLE Solicitud_reintegro_compra(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	DNI_cliente INT(8) UNSIGNED NOT NULL,
+	estado VARCHAR(50),
 	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
 	fecha DATE NOT NULL,
 	orden_medica longblob NOT NULL,
@@ -121,11 +123,18 @@ CREATE TABLE Solicitud_reintegro_compra(
 	observaciones VARCHAR(100),
 
 	CONSTRAINT pk_Solicitud_reintegro_compra
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+
+	CONSTRAINT FK_Solicitud_reintegro_compra
+ 	FOREIGN KEY (DNI_cliente) REFERENCES Cliente(DNI)
+   	ON DELETE RESTRICT ON UPDATE CASCADE
+
 ) ENGINE=InnoDB;
 
 CREATE TABLE Solicitud_reintegro_prestacion_profesional(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	DNI_cliente INT(8) UNSIGNED NOT NULL,
+	estado VARCHAR(50),
 	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
 	fecha DATE NOT NULL,
 	orden_medica longblob NOT NULL,
@@ -134,11 +143,18 @@ CREATE TABLE Solicitud_reintegro_prestacion_profesional(
 	observaciones VARCHAR(100),
 
 	CONSTRAINT pk_Solicitud_reintegro_prestacion_profesional
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+
+	CONSTRAINT FK_Solicitud_reintegro_prestacion_profesional
+ 	FOREIGN KEY (DNI_cliente) REFERENCES Cliente(DNI)
+   	ON DELETE RESTRICT ON UPDATE CASCADE
+
 ) ENGINE=InnoDB;
 
 CREATE TABLE Solicitud_reintegro_prestacion_institucion(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	DNI_cliente INT(8) UNSIGNED NOT NULL,
+	estado VARCHAR(50),
 	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
 	fecha DATE NOT NULL,
 	orden_medica longblob NOT NULL,
@@ -147,12 +163,19 @@ CREATE TABLE Solicitud_reintegro_prestacion_institucion(
 	observaciones VARCHAR(100),
 
 	CONSTRAINT pk_Solicitud_reintegro_prestacion_institucion
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	
+	CONSTRAINT FK_Solicitud_reintegro_prestacion_institucion
+ 	FOREIGN KEY (DNI_cliente) REFERENCES Cliente(DNI)
+   	ON DELETE RESTRICT ON UPDATE CASCADE
+
 ) ENGINE=InnoDB;
 
 
 CREATE TABLE Solicitud_prestacion_institucion(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+	DNI_cliente INT(8) UNSIGNED NOT NULL,
+	estado VARCHAR(50),
 	nombre_institucion VARCHAR(100),
 	direccion_institucion VARCHAR(100),
 	fecha DATE NOT NULL,
@@ -161,11 +184,18 @@ CREATE TABLE Solicitud_prestacion_institucion(
 	observaciones VARCHAR(100),
 
 	CONSTRAINT pk_Solicitud_prestacion_institucion
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+
+	CONSTRAINT FK_Solicitud_prestacion_institucion
+ 	FOREIGN KEY (DNI_cliente) REFERENCES Cliente(DNI)
+   	ON DELETE RESTRICT ON UPDATE CASCADE
+
 ) ENGINE=InnoDB;
 
 CREATE TABLE Solicitud_prestacion_profesional(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+	DNI_cliente INT(8) UNSIGNED NOT NULL,
+	estado VARCHAR(50),
 	nombre VARCHAR(45) NOT NULL,
 	apellido VARCHAR(45) NOT NULL,
 	fecha DATE NOT NULL,
@@ -174,5 +204,10 @@ CREATE TABLE Solicitud_prestacion_profesional(
 	observaciones VARCHAR(100),
 
 	CONSTRAINT pk_Solicitud_prestacion_profesional
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+
+	CONSTRAINT FK_Solicitud_prestacion_profesional
+ 	FOREIGN KEY (DNI_cliente) REFERENCES Cliente(DNI)
+   	ON DELETE RESTRICT ON UPDATE CASCADE
+
 ) ENGINE=InnoDB;
