@@ -10,7 +10,7 @@
 	$observaciones = $_POST['Observaciones'];
 	$cliente = $_GET['cliente'];
 
-	$consulta = "INSERT INTO Solicitud_prestacion_profesional(nombre,apellido, fecha, orden_medica, historia_clinica, observaciones) VALUES ('".$nombre."','".$apellido."', '".$fecha."', '".$ordenMedica."', '".$historiaClinica."', '".$observaciones."')";
+	$consulta = "INSERT INTO Solicitud_prestacion_profesional(DNI_cliente,estado,nombre,apellido, fecha, orden_medica, historia_clinica, observaciones) VALUES ('".$cliente."','nuevo','".$nombre."','".$apellido."', '".$fecha."', '".$ordenMedica."', '".$historiaClinica."', '".$observaciones."')";
 
 	$resultado = mysqli_query($conexion,$consulta);
 

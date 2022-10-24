@@ -114,7 +114,7 @@ CREATE TABLE Cliente_menor(
 CREATE TABLE Solicitud_reintegro_compra(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
 	DNI_cliente INT(8) UNSIGNED NOT NULL,
-	estado VARCHAR(50),
+	estado VARCHAR(50) NOT NULL,
 	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
 	fecha DATE NOT NULL,
 	orden_medica longblob NOT NULL,
@@ -134,7 +134,7 @@ CREATE TABLE Solicitud_reintegro_compra(
 CREATE TABLE Solicitud_reintegro_prestacion_profesional(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
 	DNI_cliente INT(8) UNSIGNED NOT NULL,
-	estado VARCHAR(50),
+	estado VARCHAR(50) NOT NULL,
 	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
 	fecha DATE NOT NULL,
 	orden_medica longblob NOT NULL,
@@ -154,7 +154,7 @@ CREATE TABLE Solicitud_reintegro_prestacion_profesional(
 CREATE TABLE Solicitud_reintegro_prestacion_institucion(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
 	DNI_cliente INT(8) UNSIGNED NOT NULL,
-	estado VARCHAR(50),
+	estado VARCHAR(50) NOT NULL,
 	cuitcuil BIGINT(22) UNSIGNED NOT NULL,
 	fecha DATE NOT NULL,
 	orden_medica longblob NOT NULL,
@@ -175,7 +175,7 @@ CREATE TABLE Solicitud_reintegro_prestacion_institucion(
 CREATE TABLE Solicitud_prestacion_institucion(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
 	DNI_cliente INT(8) UNSIGNED NOT NULL,
-	estado VARCHAR(50),
+	estado VARCHAR(50) NOT NULL,
 	nombre_institucion VARCHAR(100),
 	direccion_institucion VARCHAR(100),
 	fecha DATE NOT NULL,
@@ -195,7 +195,7 @@ CREATE TABLE Solicitud_prestacion_institucion(
 CREATE TABLE Solicitud_prestacion_profesional(
 	id SMALLINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
 	DNI_cliente INT(8) UNSIGNED NOT NULL,
-	estado VARCHAR(50),
+	estado VARCHAR(50) NOT NULL,
 	nombre VARCHAR(45) NOT NULL,
 	apellido VARCHAR(45) NOT NULL,
 	fecha DATE NOT NULL,
