@@ -27,7 +27,7 @@
             <input type="file" id="HistoriaClinica" name="HistoriaClinica"  /><br>
 
             <label for="Observaciones">Observaciones: </label><br>
-			<input type="text" id="Observaciones" name="Observaciones"  ><br>
+			<textarea name="Observaciones"></textarea><br>
 
 		<button>Confirmar</button>
         </form>	

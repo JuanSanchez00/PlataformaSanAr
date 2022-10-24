@@ -20,7 +20,7 @@
 			<label for="HistoriaClinica"> Historia Clinica: </label>
 			<input type="file" name="HistoriaClinica"/><br>
 			<label for="Observaciones"> Observaciones: </label>
-			<input type="text" name="Observaciones"/>
+			<textarea name="Observaciones"></textarea>
 			<br><button>Confirmar</button>
 		</form>
 		
