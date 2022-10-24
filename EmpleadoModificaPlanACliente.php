@@ -23,7 +23,7 @@
 
         <form action= "modificarPlanACliente.php<?php echo "?empleado=$empleado"?>" method="POST">
 
-			
+
 			<label for="ClienteSeleccionado">Cliente seleccionado: </label><br>
 			<input  class="soloLectura" type="text" id="ClienteSeleccionado" name="ClienteSeleccionado" value = "<?php echo $nombre; echo  " $apellido";?>"  readonly><br>
 		

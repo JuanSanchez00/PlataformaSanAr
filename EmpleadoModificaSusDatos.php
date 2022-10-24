@@ -35,48 +35,48 @@
 
 
        	<form action= "ModificarEmpleadoDesdeEmpleado.php" method="POST">
-       		<p>Los campos marcados con * son obligatorios</p>
+		   <p>Los campos con un (*) son obligatorios.</p>
 
-       		<label for="Nombre">* Nombre: </label><br>
+       		<label for="Nombre">Nombre: (*)</label><br>
 			<input class="soloLectura" type="text" id="Nombre" name="Nombre" value = <?php echo $Nombre;?> readonly><br>
 
-			<label for="Apellido">* Apellido: </label><br>
+			<label for="Apellido">Apellido: (*)</label><br>
 			<input class="soloLectura" type="text" id="Apellido" name="Apellido" value = <?php echo $Apellido;?> readonly><br>
 
-			<label for="FechaDeNacimiento">* Fecha de Nacimiento: </label><br>
+			<label for="FechaDeNacimiento">Fecha de Nacimiento: (*)</label><br>
 			<input class="soloLectura" type="date" id="FechaDeNacimiento" name="FechaDeNacimiento" value = <?php echo $Fecha;?> readonly><br>
 
-			<label for="DNI">* DNI: </label><br>
+			<label for="DNI">DNI: (*)</label><br>
 			<input class="soloLectura" type="number" id="DNI" name="DNI" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Dni;?> readonly><br>
 
-			<label for="Email">* Email: </label><br>
+			<label for="Email"> Email: (*)</label><br>
 			<input type="text" id="Email" name="Email" value = <?php echo $Email;?> required><br>
 
-			<label for="Provincia">* Provincia: </label><br>
+			<label for="Provincia"> Provincia: (*) </label><br>
 			<select name="Provincia">
 				<option value="BuenosAires" selected>Buenos Aires</option>
  				<option value="Mendoza">Mendoza</option>
 			</select id="Provincia" name="Provincia" required><br>
 
-			<label for="Localidad">* Localidad: </label><br>
+			<label for="Localidad"> Localidad:(*)</label><br>
 			<select name="Localidad">
 				<option value="BahiaBlanca" selected>Bahía Blanca</option>
  				<option value="Mendoza">Mendoza</option>
 			</select id="Localidad" name="Localidad" required><br>
 
-			<label for="Calle">* Calle: </label><br>
+			<label for="Calle"> Calle: (*) </label><br>
 			<input type="text" id="Calle" name="Calle" value = <?php echo $Calle;?> required><br>
 
 			<label for="DeptoCasa">Depto o casa nº: </label><br>
 			<input type="text" id="DeptoCasa" name="DeptoCasa" value = <?php echo $Depto;?>><br>
 
-			<label for="CP">* CP: </label><br>
+			<label for="CP"> CP: (*) </label><br>
 			<input type="number" id="CP" name="CP" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;"  value = <?php echo $Cp;?> required><br>
 
-			<label for="Telefono">* Teléfono: </label><br>
+			<label for="Telefono"> Teléfono: (*) </label><br>
 			<input type="number" id="Telefono" name="Telefono" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" value = <?php echo $Tel;?> required><br>
 
-			<label for="Rol">* Rol: </label><br>
+			<label for="Rol"> Rol: (*) </label><br>
 			<input class="soloLectura" type="text" name="Rol" value=<?php echo $Rol;?> readonly><br>
 
        		<script type="text/javascript">

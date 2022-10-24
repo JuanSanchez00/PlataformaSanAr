@@ -35,15 +35,15 @@
 
 
        	<form action= "ModificarSeguridadEmpleadoDesdeEmpleado.php" method="POST">
-       		<p>Los campos marcados con * son obligatorios</p>
+		   <p>Los campos con un (*) son obligatorios.</p>
 
-       		<label for="Nombre">* Nombre de usuario: </label>
+       		<label for="Nombre"> Nombre de usuario: (*) </label>
 			<input class="soloLectura" type="text" id="Nombre" name="Nombre" value = <?php echo $Dni;?> readonly><br><br>
 
-			<label for="ContraseñaActual"> Contraseña Actual: </label>
+			<label for="ContraseñaActual"> Contraseña Actual: (*) </label>
 			<input type="password" id="ContraseñaActual" name="ContraseñaActual"><br><br>
 
-			<label for="ContraseñaNueva"> Contraseña Nueva: </label>
+			<label for="ContraseñaNueva"> Contraseña Nueva: (*) </label>
 			<input type="password" id="ContraseñaNueva" name="ContraseñaNueva" pattern="(?=.*\d)(?=.*[A-Z]).{1,}" title="Debe contener una mayuscula y un numero"><br><br>
 
 			<button for="Confirmar" name = "Empleado" value = <?php echo $empleado;?>> Confirmar </button><br>
