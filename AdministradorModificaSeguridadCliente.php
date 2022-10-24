@@ -38,7 +38,7 @@
        	<form action= "modificarSeguridadClienteDesdeAdministrador.php?admin=<?php echo $admin?>" method="POST">
        		<p>Los campos marcados con (*) son obligatorios</p>
 
-       		<label for="Nombre"> Nombre(*): </label>
+       		<label for="Nombre"> DNI(*): </label>
 			<input class="SoloLectura" type="text" id="Nombre" name="Nombre" value = <?php echo $Dni;?> readonly><br><br>
 
 			<label for="ContraseñaNueva"> Contraseña Nueva(*): </label>

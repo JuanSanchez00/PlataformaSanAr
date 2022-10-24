@@ -18,7 +18,7 @@
 			    <option value="" selected disabled>Operaciones</option>
 			    <option value= "ModificarDatosAdministrador.php<?php echo"?admin=$admin"?>">Modificar Mis Datos</option>
 			    <option value="CrearNuevoPlan.php<?php echo"?admin=$admin"?>">Crear nuevo plan</option>
-			    <option value="listarClientes.php<?php echo"?admin=$admin"?>">Listar Clientes</option>
+			    <option value="listarClientes.php<?php echo"?admin=$admin"?>">Mostrar Clientes</option>
 			    <option value="listarEmpleados.php<?php echo"?admin=$admin"?>">Listar Empleados</option>
 				<option value="CrearNuevoEmpleado.php<?php echo"?admin=$admin"?>">Crear nuevo empleado</option>
 				<option value="CrearNuevoCliente.php<?php echo"?admin=$admin"?>">Crear nuevo cliente</option>
