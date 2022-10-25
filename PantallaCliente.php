@@ -16,6 +16,7 @@
 		    <option value="ClienteModificaSusDatosSeguridad.php<?php echo"?cliente=$cliente"?>">Modificar mis datos de seguridad</option>
 		    <option value="ClienteSolicitaReintegro.php<?php echo"?cliente=$cliente"?>">Solicitar reintegro</option>
 			<option value="ClienteSolicitaPrestacion.php<?php echo"?cliente=$cliente"?>">Solicitar prestacion</option>
+			<option value="ClienteGeneraCuponDePago.php<?php echo"?cliente=$cliente"?>">Generar cupon de pago</option>
 
 		</select>	
 
