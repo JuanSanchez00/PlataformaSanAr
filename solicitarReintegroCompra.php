@@ -10,7 +10,11 @@
 	$observaciones = $_POST['Observaciones'];
 	$cliente = $_GET['cliente'];
 
-	$consulta = "INSERT INTO Solicitud_reintegro_compra(DNI_cliente,estado,cuitcuil, fecha, orden_medica, factura, historia_clinica, observaciones) VALUES (".$cliente.",'nuevo',".$cuitcuil.", '".$fecha."', '".$ordenMedica."', '".$factura."', '".$historiaClinica."', '".$observaciones."')";
+	$consultaSolicitud= "INSERT INTO Solicitudes(DNI_cliente,estado,tipo) VALUES ('".$cliente."','Abierta','Reintegrgo')";
+
+	mysqli_query($conexion,$consultaSolicitud);
+	
+	$consulta = "INSERT INTO Solicitud_reintegro_compra(id,estado,cuitcuil, fecha, orden_medica, factura, historia_clinica, observaciones) VALUES (@@IDENTITY,'Abierta',".$cuitcuil.", '".$fecha."', '".$ordenMedica."', '".$factura."', '".$historiaClinica."', '".$observaciones."')";
 
 	$resultado = mysqli_query($conexion,$consulta);
 

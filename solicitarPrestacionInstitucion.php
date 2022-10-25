@@ -10,9 +10,11 @@
 	$observaciones = $_POST['Observaciones'];
 	$cliente = $_GET['cliente'];
 
-	$consultaCliente=
+	$consultaSolicitud= "INSERT INTO Solicitudes(DNI_cliente,estado,tipo) VALUES ('".$cliente."','Abierta','Prestacion')";
 
-	$consulta = "INSERT INTO Solicitud_prestacion_institucion(DNI_cliente,estado,nombre_institucion, direccion_institucion,fecha, orden_medica, historia_clinica, observaciones) VALUES ('".$cliente."','nuevo','".$nombreInstitucion."', '".$direccionInstitucion."', '".$fecha."', '".$ordenMedica."', '".$historiaClinica."', '".$observaciones."')";
+	mysqli_query($conexion,$consultaSolicitud);
+	
+	$consulta = "INSERT INTO Solicitud_prestacion_institucion(id,estado,nombre_institucion, direccion_institucion,fecha, orden_medica, historia_clinica, observaciones) VALUES (@@IDENTITY,'Abierta','".$nombreInstitucion."', '".$direccionInstitucion."', '".$fecha."', '".$ordenMedica."', '".$historiaClinica."', '".$observaciones."')";
 
 	$resultado = mysqli_query($conexion,$consulta);
 
