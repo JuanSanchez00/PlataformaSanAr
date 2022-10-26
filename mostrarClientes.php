@@ -50,11 +50,11 @@
       			<th>
       				<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 			   			<option value="" selected disabled>Operaciones</option>
-			    		<option value="">Asociar cliente menor de edad</option>
+			    		<option value="AdministradorAsociaMenorDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Asociar cliente menor de edad</option>
 			    		<option value="AdministradorModificaClienteDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos básicos</option>
 			    		<option value="AdministradorModificaSeguridadClienteDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos de seguridad</option>
 			    		<option value="">Mostrar solicitudes</option>
-			    		<option value="">Eliminar Cliente</option>
+			    		<option value="AdministradorEliminaClienteDesdeMostrarCliente.php<?php echo"?admin=$admin&cliente=$dni"?>">Eliminar Cliente</option>
 			    		<option value="AdministradorModificaPlanAClienteDesdeMostrarCliente.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos del plan</option>
 			    	</select>	
 				</th>
