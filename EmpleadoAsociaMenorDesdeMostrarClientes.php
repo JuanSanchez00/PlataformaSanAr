@@ -7,11 +7,11 @@
 		<p>Ingrese los datos del menor: </p>	
 		<?php 
 			$cliente=$_GET["cliente"];
-			$admin=$_GET["admin"];
+			$empleado=$_GET["empleado"];
 		?>
 		<p>Los campos con un (*) son obligatorios.</p>
 
-		<form action="administradorRegistraMenor.php<?php echo"?admin=$admin&cliente=$cliente"?>" method="POST">
+		<form action="empleadoRegistraMenor.php<?php echo"?empleado=$empleado&cliente=$cliente"?>" method="POST">
 			<label for="Nombre"> Nombre(*): </label>
 			<input type="text" id="Nombre" name="Nombre" required><br>
 
@@ -67,6 +67,6 @@
 
 		</form>
 
-		<button onclick="location.href='listarClientes.php?admin=<?php echo $admin?>'"> Cancelar </button>
+		<button onclick="location.href='EmpleadoListaClientes.php?empleado=<?php echo $empleado?>'"> Cancelar </button>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 	require 'conexion.php';
 	session_start();
-	$admin = $_GET['admin'];
+	$empleado = $_GET['empleado'];
 	$cliente = $_GET['cliente'];
 	$consulta = "SELECT nombre, apellido, fecha_nac, DNI, email, provincia, localidad, calle, depto, CP, tel, plan FROM Cliente WHERE DNI = ".$cliente.";";
 	$resultado = mysqli_query($conexion,$consulta);
@@ -34,7 +34,7 @@
 	<body>
 		<h1>Modificar datos basicos</h1>
 
-       	<form action= "modificarClienteDesdeAdmin.php<?php echo "?admin=$admin"?>" method="POST">
+       	<form action= "empleadoModificarClienteDesdeMostrarClientes.php<?php echo "?empleado=$empleado&cliente=$cliente"?>" method="POST">
        		<p>Los campos marcados con (*) son obligatorios</p>
 
        		<label for="Nombre"> Nombre(*): </label><br>
@@ -105,7 +105,7 @@
 
        	</form>
 
-       	<button onclick = "location.href = 'listarClientes.php<?php echo "?admin=$admin" ?>'"> Cancelar </button> 
+       	<button onclick = "location.href = 'EmpleadoListaClientes.php<?php echo "?empleado=$empleado" ?>'"> Cancelar </button> 
 
     </body>
     <script type="text/javascript">

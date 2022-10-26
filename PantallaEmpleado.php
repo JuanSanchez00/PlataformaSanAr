@@ -13,7 +13,7 @@
 		    <option value="" selected disabled>Operaciones</option>
 		     <option value="EmpleadoCreaNuevoCliente.php<?php echo"?empleado=$empleado"?>">Crear Usuario Cliente</option>
 		    <option value="EmpleadoModificaSusDatos.php<?php echo"?empleado=$empleado"?>">Modificar mis datos</option>
-		    <option value="EmpleadoListaClientes.php<?php echo"?empleado=$empleado"?>">Listar Clientes</option>
+		    <option value="EmpleadoListaClientes.php<?php echo"?empleado=$empleado"?>">Mostrar Clientes</option>
 		    <option value="EmpleadoModificaSusDatosSeguridad.php<?php echo"?empleado=$empleado"?>">Modificar mis datos de seguridad</option>
 		</select>	
 
