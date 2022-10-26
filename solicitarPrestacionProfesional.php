@@ -10,7 +10,7 @@
 	$observaciones = $_POST['Observaciones'];
 	$cliente = $_GET['cliente'];
 
-	$consultaSolicitud= "INSERT INTO Solicitudes(DNI_cliente,estado,tipo) VALUES ('".$cliente."','Abierta','Prestacion')";
+	$consultaSolicitud= "INSERT INTO Solicitudes(DNI_cliente,estado,tipo) VALUES ('".$cliente."','Abierta','Prestacion Profesional')";
 
 	mysqli_query($conexion,$consultaSolicitud);
 
