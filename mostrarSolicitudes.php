@@ -17,33 +17,23 @@
 			<tr>
       			<th><?php echo $id;?></th >
       			<th><?php echo $tipo2[0];?></th>
-                <th><button class="botones" value = "<?php echo $tipo; echo " $id";?>" onclick=funcion(this)> Mas detalles </button></th >
+                <th><button class="botones" name = "<?php echo $id?>"  value = "<?php echo $tipo;?>" onclick=funcion(this)> Mas detalles </button></th >
       			<th><?php echo $estado;?></th>
     		</tr>
 		
 			<script type="text/javascript">
 				function funcion(e){
-					var cadena = e.value;
-					cadena = cadena.split(" ");
-
-					if(cadena.length==3){
-						var tipo = cadena[0] + " "+ cadena[1];
-					}
-					else{
-						var tipo = cadena[0];
-					}
-
-					var id = cadena[cadena.length-1];
+					var tipo = e.value;
 
 					if(tipo == "Reintegro"){
-						window.open('masInfoReintegro.php?cliente=<?php echo $cliente;?>&id='+id,"_self");
+						window.open('masInfoReintegro.php?cliente=<?php echo $cliente;?>&id='+e.name,"_self");
 					}
 					if (tipo == "Prestacion Institucion"){
-						window.open('masInfoPrestacionInstitucion.php?cliente=<?php echo $cliente;?>&id='+id,"_self");
+						window.open('masInfoPrestacionInstitucion.php?cliente=<?php echo $cliente;?>&id='+e.name,"_self");
 
 					}
 					if(tipo == "Prestacion Profesional"){
-						window.open('masInfoPrestacionProfesional.php?cliente=<?php echo $cliente;?>&id='+id,"_self");
+						window.open('masInfoPrestacionProfesional.php?cliente=<?php echo $cliente;?>&id='+e.name,"_self");
 
 					}
 

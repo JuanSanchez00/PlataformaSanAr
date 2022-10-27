@@ -32,14 +32,13 @@
 					if(e.value == "Reintegro"){
 						window.location.href = "masInfoReintegroDesdeEmpleado.php?empleado=<?php echo $empleado;?>&id="+e.name;
 					}
-					/*if (e.value == "Prestacion Institucion"){
-						window.open('masInfoPrestacionInstitucion.php?cliente=<?php echo $cliente;?>&id=<?php echo $id;?>&tipo=<?php echo $tipo;?>',"_self");
-
+					if (e.value == "Prestacion Institucion"){
+						window.location.href = "masInfoPrestacionInstitucionalDesdeEmpleado.php?empleado=<?php echo $empleado;?>&id="+e.name;
 					}
+					
 					if(e.value == "Prestacion Profesional"){
-						window.open('masInfoPrestacionProfesional.php?cliente=<?php echo $cliente;?>&id=<?php echo $id;?>&tipo=<?php echo $tipo;?>',"_self");
-
-					}*/
+						window.location.href = "masInfoPrestacionProfesionalDesdeEmpleado.php?empleado=<?php echo $empleado;?>&id="+e.name;
+					}
 				}		
 			</script>
     <?php
