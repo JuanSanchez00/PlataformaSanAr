@@ -5,50 +5,49 @@
 	$cliente = $_GET['cliente'];
 
 	$id = $_GET['id'];
-	$tipo = $_GET['tipo'];
 
-	$consultaCompra = "SELECT cuitcuil,fecha, orden_medica, factura,historia_clinica, observaciones FROM solicitud_reintegro_compra WHERE id = '".$id."';";
+	$consultaCompra = "SELECT cuitcuil,fecha, orden_medica,factura,historia_clinica, observaciones FROM solicitud_reintegro_compra WHERE id = '".$id."';";
 	$resultadoCompra = mysqli_query($conexion,$consultaCompra);
 
 	if ($resultadoCompra){
-		while ($row = $resultado->fetch_array()) {
-			$nombreInstitucion = $row['cuitcuil'];
-			$direccionInstitucion = $row['fecha'];
-			$fecha = $row['orden_medica'];
-			$ordenMedica = $row['factura'];
+		while ($row = $resultadoCompra->fetch_array()) {
+			$cuitcuil = $row['cuitcuil'];
+			$fecha = $row['fecha'];
+			$ordenMedica = $row['orden_medica'];
+			$factura = $row['factura'];
 			$historiaClinica = $row['historia_clinica'];
 			$observaciones = $row['observaciones'];
 		}
 	}
-	else{
-		$consultaRPI = "SELECT cuitcuil,fecha, orden_medica, factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_institucion WHERE id = '".$id."';";
-		$resultadoRPI = mysqli_query($conexion,$consultaRPI);
-		if ($resultadoRPI){
-			while ($row = $resultado->fetch_array()) {
-				$nombreInstitucion = $row['cuitcuil'];
-				$direccionInstitucion = $row['fecha'];
-				$fecha = $row['orden_medica'];
-				$ordenMedica = $row['factura'];
-				$historiaClinica = $row['historia_clinica'];
-				$observaciones = $row['observaciones'];
-			}
-		}
-		else{
-			$consultaRPP = "SELECT cuitcuil,fecha, orden_medica, factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_profesional WHERE id = '".$id."';";
-			$resultadoRPP = mysqli_query($conexion,$consultaRPP);
-			if ($resultadoRPP){
-				while ($row = $resultado->fetch_array()) {
-					$cuitcuil = $row['cuitcuil'];
-					$fecha = $row['fecha'];
-					$ordenMedica = $row['orden_medica'];
-					$factura = $row['factura'];
-					$historiaClinica = $row['historia_clinica'];
-					$observaciones = $row['observaciones'];
-				}
-			}
-		}
+	
+	$consultaRPI = "SELECT cuitcuil,fecha, orden_medica,factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_institucion WHERE id = '".$id."';";
+	$resultadoRPI = mysqli_query($conexion,$consultaRPI);
 
-	}	
+	if ($resultadoRPI){
+		while ($row = $resultadoRPI->fetch_array()) {
+			$cuitcuil = $row['cuitcuil'];
+			$fecha = $row['fecha'];
+			$ordenMedica = $row['orden_medica'];
+			$factura = $row['factura'];
+			$historiaClinica = $row['historia_clinica'];
+			$observaciones = $row['observaciones'];
+		}
+	}
+	
+	$consultaRPP = "SELECT cuitcuil,fecha, orden_medica,factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_profesional WHERE id = '".$id."';";
+	$resultadoRPP = mysqli_query($conexion,$consultaRPP);
+
+	if ($resultadoRPP){
+		while ($row = $resultadoRPP->fetch_array()) {
+			$cuitcuil = $row['cuitcuil'];
+			$fecha = $row['fecha'];
+			$ordenMedica = $row['orden_medica'];
+			$factura = $row['factura'];
+			$historiaClinica = $row['historia_clinica'];
+			$observaciones = $row['observaciones'];
+		}
+	}
+		
 ?>
 
 
@@ -81,7 +80,8 @@
 			<label for="Observaciones">Observaciones: </label>
 			<input readonly class="soloLectura" type="text" id="Observaciones" name="Observaciones" value = <?php echo $observaciones;?>><br>
 		</form>
+		<button onclick="location.href='ListarSolicitudes.php<?php echo"?cliente=$cliente"?>'"> Volver </button>		
+
     </body>
-	<button onclick="location.href='ListarSolicitudes.php<?php echo"?cliente=$cliente"?>'"> Volver </button>		
 
 </html>

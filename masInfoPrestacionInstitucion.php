@@ -5,7 +5,6 @@
 	$cliente = $_GET['cliente'];
 
 	$id = $_GET['id'];
-	$tipo = $_GET['tipo'];
 
 	$consulta = "SELECT nombre_institucion, direccion_institucion,fecha, orden_medica, historia_clinica, observaciones FROM solicitud_prestacion_institucion WHERE id = '".$id."';";
 	$resultado = mysqli_query($conexion,$consulta);
