@@ -4,11 +4,11 @@
 	</head>
 	<body>
 		<?php
+			
 			require 'conexion.php';
 			session_start();
 			$cliente=$_GET["cliente"];
-			$consulta = "SELECT nombre, apellido, DNI, plan FROM Cliente 
-			WHERE DNI = ".$cliente.";";
+			$consulta = "SELECT nombre, apellido, DNI, plan FROM Cliente WHERE DNI = ".$cliente.";";
 
 			$resultado = mysqli_query($conexion,$consulta);
 
@@ -21,24 +21,23 @@
 				}
 			}	
 
-			$cliente_menor=$_GET["cliente_menor"];
-			$consulta2 = "SELECT Cliente_menor.nombre, Cliente_menor.apellido, Cliente_menor.DNI FROM Cliente INNER JOIN Cliente_menor ON Cliente.DNI=Cliente_menor.DNI_tutor";
+			$MenorACargo = "No";
+			$NombreMenor = "";
+			$ApellidoMenor = "";
+			$DniMenor = "";
+			
+			$consulta2 = "SELECT Cliente_menor.nombre, Cliente_menor.apellido, Cliente_menor.DNI FROM Cliente INNER JOIN Cliente_menor ON Cliente.DNI=Cliente_menor.DNI_tutor WHERE Cliente.DNI = ".$cliente.";";
 
 			$resultado2 = mysqli_query($conexion,$consulta2);
 
-			if($resultado2){
+			if(!empty($resultado2)){
 				while($row = $resultado2->fetch_array()){
+					$MenorACargo = "Si";
 					$NombreMenor = $row['nombre'];
 					$ApellidoMenor = $row['apellido'];
 					$DniMenor = $row['DNI'];
 				}
 			}
-			else{
-				$NombreMenor = "";
-				$ApellidoMenor = "";
-				$DniMenor = "";
-			}
-
 
 		?>
 		<label for="Nombre">Nombre: </label>
@@ -50,7 +49,8 @@
 		<label for="DNI">DNI: </label>
 		<label for="ValDni"><?php echo $Dni;?></label><br>
 
-		<label for="Menor a cargo">Menor a cargo: </label><br>
+		<label for="MenorACargo">Menor a cargo: </label>
+		<label for="ValMenorACargp"><?php echo $MenorACargo;?></label><br>
 
 		<label for="	NombreMenor">Nombre: </label>
 		<label for="ValNombreMenor"><?php echo $NombreMenor;?></label><br>
