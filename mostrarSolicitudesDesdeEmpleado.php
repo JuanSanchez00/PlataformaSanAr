@@ -1,6 +1,10 @@
 <?php
 	require 'conexion.php';
 	session_start();
+
+	$empleado = $_GET['empleado'];
+
+	$arreglo = array("Abierta","Analisis", "Aprobada", "Desaprobada");
     
     $consulta = "SELECT id, estado, tipo, DNI, apellido, nombre FROM solicitudes JOIN cliente WHERE DNI_cliente = DNI;";
 
@@ -14,6 +18,9 @@
 			$nombre = $row['nombre'];
 			$apellido = $row['apellido'];
 			$DNI = $row['DNI'];
+
+			$clave = array_search($estado, $arreglo);
+			unset($arreglo[$clave]);
 	?>
 
 			<tr>
@@ -23,7 +30,16 @@
       			<th><?php echo $nombre ?></th>
       			<th><?php echo $DNI; ?></th>
                 <th><button class="botones" name = "<?php echo $id?>" value = "<?php echo $tipo ?>" onclick=funcion(this)> Mas detalles </button></th >
-      			<th><?php echo $estado;?></th>
+      			<th>
+      				<form method="POST">
+	      				<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+							<option selected><?php echo $estado?></option>
+	 						<?php $i =0; foreach ($arreglo as $item){ ?>
+							<option value="ConfirmacionEmpleadoCambiaEstadoSolicitud.php?empleado=<?php echo $empleado;?>&id=<?php echo $id;?>&estado=<?php echo $item;?>" > <?php echo $item; ?> </option>
+							<?php $i= $i+1; } ?>
+						</select>
+					</form>
+				</th>
     		</tr>
 
 			<script type="text/javascript">
