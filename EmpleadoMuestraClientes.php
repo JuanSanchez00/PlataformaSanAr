@@ -53,7 +53,7 @@
 			    		<option value="EmpleadoAsociaMenorDesdeMostrarClientes.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Asociar cliente menor de edad</option>
 			    		<option value="EmpleadoModificaClienteDesdeMostrarClientes.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Modificar datos básicos</option>
 			    		<option value="EmpleadoModificaSeguridadClienteDesdeMostrarClientes.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Modificar datos de seguridad</option>
-			    		<option value="">Mostrar solicitudes</option>
+			    		<option value="EmpleadoMuestraSolicitudesDesdeMostrarClientes.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Mostrar solicitudes</option>
 			    		<option value="ConfirmacionEmpleadoEliminaClienteDesdeMostrarCliente.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Eliminar Cliente</option>
 			    		<option value="EmpleadoModificaPlanAClienteDesdeMostrarCliente.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Modificar datos del plan</option>
 			    	</select>	

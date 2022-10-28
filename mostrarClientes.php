@@ -53,7 +53,7 @@
 			    		<option value="AdministradorAsociaMenorDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Asociar cliente menor de edad</option>
 			    		<option value="AdministradorModificaClienteDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos básicos</option>
 			    		<option value="AdministradorModificaSeguridadClienteDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos de seguridad</option>
-			    		<option value="">Mostrar solicitudes</option>
+			    		<option value="AdministradorMuestraSolicitudesDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Mostrar solicitudes</option>
 			    		<option value="ConfirmacionAdministradorEliminaClienteDesdeMostrarCliente.php<?php echo"?admin=$admin&cliente=$dni"?>">Eliminar Cliente</option>
 			    		<option value="AdministradorModificaPlanAClienteDesdeMostrarCliente.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos del plan</option>
 			    	</select>	

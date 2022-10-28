@@ -29,6 +29,7 @@
 				?>
   			</tbody>
 		</table>
+		<button onclick="location.href='PantallaEmpleado.php<?php echo"?empleado=$empleado"?>'"> Volver </button>	
 		
 	<body>
 

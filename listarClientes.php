@@ -29,7 +29,7 @@
 				?>
   			</tbody>
 		</table>
-		
+		<button onclick="location.href='PantallaAdministrador.php<?php echo"?admin=$admin"?>'"> Volver </button>	
 	<body>
 
 </html>
