@@ -52,10 +52,10 @@
 			   			<option value="" selected disabled>Operaciones</option>
 			    		<option value="EmpleadoAsociaMenorDesdeMostrarClientes.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Asociar cliente menor de edad</option>
 			    		<option value="EmpleadoModificaClienteDesdeMostrarClientes.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Modificar datos básicos</option>
-			    		<option value="AdministradorModificaSeguridadClienteDesdeMostrarClientes.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos de seguridad</option>
+			    		<option value="EmpleadoModificaSeguridadClienteDesdeMostrarClientes.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Modificar datos de seguridad</option>
 			    		<option value="">Mostrar solicitudes</option>
-			    		<option value="AdministradorEliminaClienteDesdeMostrarCliente.php<?php echo"?admin=$admin&cliente=$dni"?>">Eliminar Cliente</option>
-			    		<option value="AdministradorModificaPlanAClienteDesdeMostrarCliente.php<?php echo"?admin=$admin&cliente=$dni"?>">Modificar datos del plan</option>
+			    		<option value="ConfirmacionEmpleadoEliminaClienteDesdeMostrarCliente.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Eliminar Cliente</option>
+			    		<option value="EmpleadoModificaPlanAClienteDesdeMostrarCliente.php<?php echo"?empleado=$empleado&cliente=$dni"?>">Modificar datos del plan</option>
 			    	</select>	
 				</th>
     		</tr>

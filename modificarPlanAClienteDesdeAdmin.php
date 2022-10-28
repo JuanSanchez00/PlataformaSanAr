@@ -11,6 +11,6 @@
 	$resultado = mysqli_query($conexion,$consulta);
 
 	if($resultado){
-		echo "<script> alert('usuario modificado correctamente');  window.location='PantallaAdministrador.php?admin=$admin'; </script>";
+		echo "<script> alert('usuario modificado correctamente');  window.location='listarClientes.php?admin=$admin'; </script>";
 	}
 ?>

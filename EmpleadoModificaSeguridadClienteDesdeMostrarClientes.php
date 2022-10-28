@@ -9,7 +9,7 @@
 		<?php
 			require 'conexion.php';
 			session_start();
-			$admin = $_GET["admin"];
+			$empleado = $_GET["empleado"];
 			$cliente = $_GET['cliente'];
 			$consulta = "SELECT nombre, apellido, fecha_nac, DNI, email, provincia, localidad, calle, depto, CP, tel, plan FROM Cliente 
 			WHERE DNI = ".$cliente.";";
@@ -35,7 +35,7 @@
 		?>
 
 
-       	<form action= "modificarSeguridadClienteDesdeAdministrador.php?admin=<?php echo $admin?>" method="POST">
+       	<form action= "EmpleadoModificarSeguridadClienteDesdeAdministrador.php?empleado=<?php echo $empleado?>" method="POST">
        		<p>Los campos marcados con (*) son obligatorios</p>
 
        		<label for="Nombre"> DNI(*): </label>
@@ -47,7 +47,7 @@
 			<button for="Confirmar" name = "Cliente" value = <?php echo $cliente;?>> Confirmar </button><br>
 
        	</form>
-       	<button onclick="location.href='listarClientes.php?admin=<?php echo $admin?>'"> Cancelar </button>
+       	<button onclick="location.href='EmpleadoListaClientes.php?empleado=<?php echo $empleado?>'"> Cancelar </button>
 
 
     </body>

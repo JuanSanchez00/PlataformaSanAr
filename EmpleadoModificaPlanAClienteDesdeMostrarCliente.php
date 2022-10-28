@@ -3,7 +3,7 @@
 	session_start();
 	$consulta = "SELECT nombre, apellido, plan, DNI FROM Cliente WHERE DNI = ".$_GET['cliente'].";";
 	$resultado = mysqli_query($conexion,$consulta);
-	$admin = $_GET['admin'];
+	$empleado = $_GET['empleado'];
 	if ($resultado){
 		while ($row = $resultado->fetch_array()) {
 			$nombre = $row['nombre'];
@@ -22,7 +22,7 @@
 	<body>
 		<h1>Modificar Plan</h1>
 		<p>Los campos marcados con (*) son obligatorios</p>
-        <form action= "modificarPlanAClienteDesdeAdmin.php<?php echo "?admin=$admin"?>" method="POST">
+        <form action= "EmpleadoModificarPlanAClienteDesdeAdmin.php<?php echo "?empleado=$empleado"?>" method="POST">
 
 			
 			<label for="ClienteSeleccionado">Cliente seleccionado: </label><br>
@@ -53,7 +53,7 @@
 
     	</form>
 
-    	<button onclick="location.href='listarClientes.php?admin=<?php echo $admin?>'"> Cancelar </button>
+    	<button onclick="location.href='EmpleadoListaClientes.php?empleado=<?php echo $empleado?>'"> Cancelar </button>
 	</body>
 
 </html>

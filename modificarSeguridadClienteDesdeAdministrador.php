@@ -8,6 +8,6 @@
 
 	$consulta = "UPDATE cliente SET password = '".$PassNueva."' WHERE DNI = ".$Cliente.";";
 		$resultado = mysqli_query($conexion,$consulta);
-		echo "<script> alert('Contraseña modificada correctamente.');  window.location='PantallaAdministrador.php?admin=$admin'; </script>";
+		echo "<script> alert('Contraseña modificada correctamente.');  window.location='listarClientes.php?admin=$admin'; </script>";
 
 ?>
