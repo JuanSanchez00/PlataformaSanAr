@@ -13,6 +13,6 @@
 		</select>
 		
 		<br>
-		<button onclick="location.href='PantallaCliente.php'"> Volver </button>
+		<button onclick="location.href='PantallaCliente.php?cliente=<?php echo $cliente?>'"> Volver </button>
 	</body>
 </html>

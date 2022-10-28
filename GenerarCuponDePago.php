@@ -74,6 +74,6 @@
 
 
 		<button> Imprimir </button>
-		<button onclick="location.href='ClienteGeneraCuponDePago.php'"> Volver </button>
+		<button onclick="location.href='ClienteGeneraCuponDePago.php?cliente=<?php echo $cliente?>'"> Volver </button>
 	</body>
 </html>
