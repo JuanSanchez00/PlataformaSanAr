@@ -47,8 +47,8 @@
 			<label for="HistoriaClinica">Historia clinica: </label>
 			<a title="HistoriaClinica" download="<?php echo $historiaClinica;?>"> <?php echo $historiaClinica;?></a><br>
 
-			<label for="Observaciones">Observaciones: </label>
-			<input readonly class="soloLectura" type="text" id="Observaciones" name="Observaciones" value = <?php echo $observaciones;?>><br>
+			<label for="Observaciones">Observaciones: </label><br>
+			<textarea name="Observaciones" id="Observaciones" readonly="readonly" > <?php echo $observaciones;?> </textarea><br>
 
 		</form>
 		<button onclick="location.href='ListarSolicitudes.php<?php echo"?cliente=$cliente"?>'"> Volver </button>		

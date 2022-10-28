@@ -2,52 +2,48 @@
 	require 'conexion.php';
 	session_start();
 
-	$cliente = $_GET['cliente'];
-
+	$admin = $_GET['admin'];
 	$id = $_GET['id'];
-
-	$consultaCompra = "SELECT cuitcuil,fecha, orden_medica,factura,historia_clinica, observaciones FROM solicitud_reintegro_compra WHERE id = '".$id."';";
+	
+	$consultaCompra = "SELECT cuitcuil,fecha, orden_medica, factura,historia_clinica, observaciones FROM solicitud_reintegro_compra WHERE id = '".$id."';";
 	$resultadoCompra = mysqli_query($conexion,$consultaCompra);
 
 	if ($resultadoCompra){
 		while ($row = $resultadoCompra->fetch_array()) {
-			$cuitcuil = $row['cuitcuil'];
+			$nombreInstitucion = $row['cuitcuil'];
 			$fecha = $row['fecha'];
-			$ordenMedica = $row['orden_medica'];
-			$factura = $row['factura'];
+			$ordenMedica = $row['factura'];
 			$historiaClinica = $row['historia_clinica'];
 			$observaciones = $row['observaciones'];
 		}
 	}
-	
-	$consultaRPI = "SELECT cuitcuil,fecha, orden_medica,factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_institucion WHERE id = '".$id."';";
-	$resultadoRPI = mysqli_query($conexion,$consultaRPI);
 
+	$consultaRPI = "SELECT cuitcuil,fecha, orden_medica, factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_institucion WHERE id = '".$id."';";
+	$resultadoRPI = mysqli_query($conexion,$consultaRPI);
 	if ($resultadoRPI){
 		while ($row = $resultadoRPI->fetch_array()) {
-			$cuitcuil = $row['cuitcuil'];
+			$nombreInstitucion = $row['cuitcuil'];
 			$fecha = $row['fecha'];
-			$ordenMedica = $row['orden_medica'];
-			$factura = $row['factura'];
+			$ordenMedica = $row['factura'];
 			$historiaClinica = $row['historia_clinica'];
 			$observaciones = $row['observaciones'];
 		}
 	}
 	
-	$consultaRPP = "SELECT cuitcuil,fecha, orden_medica,factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_profesional WHERE id = '".$id."';";
+	$consultaRPP = "SELECT cuitcuil,fecha, orden_medica, factura,historia_clinica, observaciones FROM solicitud_reintegro_prestacion_profesional WHERE id = '".$id."';";
 	$resultadoRPP = mysqli_query($conexion,$consultaRPP);
-
 	if ($resultadoRPP){
 		while ($row = $resultadoRPP->fetch_array()) {
-			$cuitcuil = $row['cuitcuil'];
+			$nombreInstitucion = $row['cuitcuil'];
 			$fecha = $row['fecha'];
-			$ordenMedica = $row['orden_medica'];
-			$factura = $row['factura'];
+			$ordenMedica = $row['factura'];
 			$historiaClinica = $row['historia_clinica'];
 			$observaciones = $row['observaciones'];
 		}
 	}
-		
+	
+
+	
 ?>
 
 
@@ -63,25 +59,24 @@
 			<input class="soloLectura" type="number" id="Numero" name="Numero" value = <?php echo $id;?> readonly><br>
 
 			<label for="cuitcuil">Cuit/Cuil: </label>
-			<input class="soloLectura" type="number" id="cuitcuil" name="cuitcuil" value = <?php echo $cuitcuil;?> readonly><br>
+			<input class="soloLectura" type="number" id="cuitcuil" name="cuitcuil" value = <?php echo $nombreInstitucion;?> readonly><br>
 
 			<label for="Fecha">Fecha: </label>
-			<input class="soloLectura" type="date" id="Fecha" name="Fecha" value = <?php echo $fecha;?> readonly><br>
+			<input class="soloLectura" type="date" id="Fecha" name="Fecha" value = "<?php echo $fecha;?>" readonly><br>
 
 			<label for="OrdenMedica">Orden medica: </label>
 			<a title="OrdenMedica"> <?php echo $ordenMedica;?></a><br>
 
 			<label for="factura">Factura: </label>
-			<a title="factura"> <?php echo $factura;?></a><br>
+			<a title="factura"> <?php echo $ordenMedica;?></a><br>
 
 			<label for="HistoriaClinica">Historia clinica: </label>
-			<a title="HistoriaClinica"> <?php echo $historiaClinica;?></a><br>
+			<a title="HistoriaClinica"> <?php echo $historiaClinica;?></a><br> 
 
 			<label for="Observaciones">Observaciones: </label>
 			<textarea name="Observaciones" id="Observaciones" readonly="readonly" > <?php echo $observaciones;?> </textarea><br>
 		</form>
-		<button onclick="location.href='ListarSolicitudes.php<?php echo"?cliente=$cliente"?>'"> Volver </button>		
-
+		<button onclick="location.href='AdministradorListaSolicitudes.php<?php echo"?admin=$admin"?>'"> Volver </button>		
     </body>
 
 </html>

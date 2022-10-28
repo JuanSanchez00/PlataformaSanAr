@@ -3,7 +3,7 @@
 	session_start();
 
 	
-	$empleado = $_GET['empleado'];
+	$admin = $_GET['admin'];
 	$id = $_GET['id'];
 
 	$consulta = "SELECT nombre_institucion, direccion_institucion,fecha, orden_medica, historia_clinica, observaciones FROM solicitud_prestacion_institucion WHERE id = '".$id."';";
@@ -51,7 +51,7 @@
 			<textarea name="Observaciones" id="Observaciones" readonly="readonly" > <?php echo $observaciones;?> </textarea><br>
 
 		</form>
-		<button onclick="location.href='EmpleadoListaSolicitudes.php<?php echo"?empleado=$empleado"?>'"> Volver </button>		
+		<button onclick="location.href='AdministradorListaSolicitudes.php<?php echo"?admin=$admin"?>'"> Volver </button>		
 
     </body>
 </html>
