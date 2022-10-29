@@ -19,8 +19,8 @@
 			$apellido = $row['apellido'];
 			$DNI = $row['DNI'];
 
-			$clave = array_search($estado, $arreglo);
-			unset($arreglo[$clave]);
+			/*$clave = array_search($estado, $arreglo);
+			unset($arreglo[$clave]);*/
 	?>
 
 			<tr>
