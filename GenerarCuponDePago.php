@@ -52,16 +52,16 @@
 		<label for="MenorACargo">Menor a cargo: </label>
 		<label for="ValMenorACargp"><?php echo $MenorACargo;?></label><br>
 
-		<label for="	NombreMenor">Nombre: </label>
+		<label for="NombreMenor">Nombre: </label>
 		<label for="ValNombreMenor"><?php echo $NombreMenor;?></label><br>
 
-		<label for="	ApellidoMenor">Apellido: </label>
+		<label for="ApellidoMenor">Apellido: </label>
 		<label for="ValApellidoMenor"><?php echo $ApellidoMenor;?></label><br>
 
-		<label for="	DNIMenor">DNI: </label>
+		<label for="DNIMenor">DNI: </label>
 		<label for="ValDniMenor"><?php echo $DniMenor;?></label><br>
 
-		<label for="	MontoMenor">Monto: </label>
+		<label for="MontoMenor">Monto: </label><br>
 
 
 		<label for="Fecha de vencimiento">Fecha de vencimiento: </label><br>
