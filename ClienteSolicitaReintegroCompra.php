@@ -12,7 +12,7 @@
 			<label for="CUITCUIL"> CUIT/CUIL(*): </label>
 			<input type="number" id="CUITCUIL" name="CUITCUIL" min="0" onkeypress="return SoloEnteroPositivo(event);"ondrop="return false;" onpaste="return false;" required><br>
 			<label for="Fecha"> Fecha(*): </label>
-			<input type="date" id="Fecha" name="Fecha" required><br>
+			<input type="date" id="Fecha" name="Fecha" onchange="return validarFecha(event);"ondrop="return false;" onpaste="return false;" required><br>
 			<label for="OrdenMedica"> Orden Médica(*): </label>
 			<input type="file" name="OrdenMedica" required /><br>
 			<label for="Factura"> Factura(*): </label>
@@ -40,6 +40,21 @@
 			        }
 			    }
 			}
+
+			function validarFecha(){
+			    fecha = document.getElementById('Fecha').value; 	
+			   	fechaParseada = fecha.split("-");
+			   	FechaInicio = new Date(fechaParseada[0],fechaParseada[1],fechaParseada[2]-31);
+			   	FechaActual = new Date();
+			    
+				var dif = FechaActual - FechaInicio;
+				var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+
+				if(dias < 1){
+					alert("La fecha ingresada debe ser como mínimo 24hs antes de la fecha actual.");
+					document.getElementById('Fecha').value = "";
+				}
+    		}
 		</script>	
 	</body>
 </html>
