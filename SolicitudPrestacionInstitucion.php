@@ -18,7 +18,7 @@
 			<input type="text" id="DireccionInstitucion" name="DireccionInstitucion" required><br>
 
 			<label for="Fecha">Fecha(*): </label><br>
-			<input type="date" id="Fecha" name="Fecha" required><br>
+			<input type="date" id="Fecha" name="Fecha" onchange="return validarFecha(event);"ondrop="return false;" onpaste="return false;" required><br>
 
             <label for="OrdenMedica">Orden medica(*): </label><br>
             <input type="file" id="OrdenMedica" name="OrdenMedica" required /><br>
@@ -33,5 +33,22 @@
         </form>	
 		<button onclick="location.href='PantallaCliente.php<?php echo"?cliente=$cliente"?>'"> Cancelar </button>		
 
+		<script type="text/javascript">
+			function validarFecha(){
+			    	fecha = document.getElementById('Fecha').value; 	
+			    	fechaParseada = fecha.split("-");
+			    	FechaInicio = new Date(fechaParseada[0],fechaParseada[1],fechaParseada[2]-31);
+			    	FechaActual = new Date();
+			    
+					var dif = FechaInicio - FechaActual ;
+					var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+
+					if(dias < 1){
+                        alert("La fecha ingresada debe ser como mínimo 24hs despues de la fecha actual.");
+						document.getElementById('Fecha').value = "";
+					}
+    			}
+		</script>	
+		
     </body>
 </html>
