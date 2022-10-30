@@ -4,37 +4,38 @@
 	</head>
 	<body>
 		<?php 
+			session_start();
 			$cliente=$_GET["cliente"];
+			$_SESSION['option']=1;
 		?>
 
-		<select id="selectMensual" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+		<select name="Mensual" id="selectMensual" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 		    <option value="" selected disabled>Generar cupon de pago mensual</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Enero</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Febrero</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Marzo</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Abril</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Mayo</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Junio</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Julio</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Agosto</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Septiembre</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Octubre</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Noviembre</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Diciembre</option>
-
+			<option label="0" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*0";?>">Enero</option>
+			<option label="1" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*1";?>">Febrero</option>
+			<option label="2" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*2";?>">Marzo</option>
+			<option label="3" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*3";?>">Abril</option>
+			<option label="4" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*4";?>">Mayo</option>
+			<option label="5" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*5";?>">Junio</option>
+			<option label="6" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*6";?>">Julio</option>
+			<option label="7" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*7";?>">Agosto</option>
+			<option label="8" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*8";?>">Septiembre</option>
+			<option label="9" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*9";?>">Octubre</option>
+			<option label="10" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*10";?>">Noviembre</option>
+			<option label="11" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*11";?>">Diciembre</option>
 		</select>
 
 		<br><br>
 
 		<select id="selectSemestral" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 		    <option value="" selected disabled>Generar cupon de pago semestral</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Primer semestre</option>
-			<option value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"?>">Segundo semestre</option>
+			<option label="12" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*12";?>">Primer semestre</option>
+			<option label="13" value="GenerarCuponDePago.php<?php echo"?cliente=$cliente"; echo"*13";?>">Segundo semestre</option>
 		</select>
 
 		<br><br>
 
-		<button id="anual" onclick="location.href='GenerarCuponDePago.php?cliente=<?php echo $cliente?>'"> Generar cupon de pago anual </button>
+		<button id="anual" onclick="location.href='GenerarCuponDePago.php?cliente=<?php echo $cliente; echo"*14";?>'"> Generar cupon de pago anual </button>
 
 		<script>
 			const date = new Date()
@@ -63,10 +64,10 @@
 					pagoSemestral.options[1].disabled = true;
 				}
 			}
-
 		</script>
 		
 		<br><br>
+
 		<button onclick="location.href='PantallaCliente.php?cliente=<?php echo $cliente?>'"> Volver </button>
 	</body>
 </html>

@@ -4,10 +4,14 @@
 	</head>
 	<body>
 		<?php
-			
 			require 'conexion.php';
 			session_start();
 			$cliente=$_GET["cliente"];
+
+			$arreglo=explode("*",$cliente);
+			$cliente=$arreglo[0];
+			$option=$arreglo[1];
+
 			$consulta = "SELECT nombre, apellido, DNI, plan FROM Cliente WHERE DNI = ".$cliente.";";
 
 			$resultado = mysqli_query($conexion,$consulta);
@@ -38,8 +42,8 @@
 					$DniMenor = $row['DNI'];
 				}
 			}
-
 		?>
+
 		<label for="Nombre">Nombre: </label>
 		<label for="ValNombre"><?php echo $Nombre;?></label><br>
 
@@ -50,7 +54,7 @@
 		<label for="ValDni"><?php echo $Dni;?></label><br>
 
 		<label for="MenorACargo">Menor a cargo: </label>
-		<label for="ValMenorACargp"><?php echo $MenorACargo;?></label><br>
+		<label for="ValMenorACargo"><?php echo $MenorACargo;?></label><br>
 
 		<label for="NombreMenor">Nombre: </label>
 		<label for="ValNombreMenor"><?php echo $NombreMenor;?></label><br>
@@ -61,19 +65,44 @@
 		<label for="DNIMenor">DNI: </label>
 		<label for="ValDniMenor"><?php echo $DniMenor;?></label><br>
 
-		<label for="MontoMenor">Monto: </label><br>
+		<label for="MontoMenor">Monto: </label>
+		<label for="ValMontoMenor"></label><br>
 
-
-		<label for="Fecha de vencimiento">Fecha de vencimiento: </label><br>
+		<label for="Fecha de vencimiento">Fecha de vencimiento: </label>
+		<label id="valFechaVencimiento" for="ValFechaVencimiento"></label><br>
 
 		<label for="Plan">Plan: </label>
 		<label for="ValPlan"><?php echo $Plan;?></label><br>
 
-		<label for="Cuota">Cuota: </label><br>
-		<label for="Monto">Monto: </label><br>
+		<label for="Cuota">Cuota: </label>
+		<label id="valCuota" for="ValCuota"></label><br>
 
+		<label for="Monto">Monto: </label>
+		<label for="ValMonto"></label><br>
 
-		<button> Imprimir </button>
 		<button onclick="location.href='ClienteGeneraCuponDePago.php?cliente=<?php echo $cliente?>'"> Volver </button>
+		<button> Imprimir </button>
+
+		<script>
+			const currentDate = new Date()
+			var currentDay = currentDate.getDate()
+			var currentMonth = currentDate.getMonth()
+			var currentYear = currentDate.getFullYear()
+			const fechaVencimiento = new Date()
+			
+			if(currentMonth == 11){
+				fechaVencimiento.setMonth(0)
+				fechaVencimiento.setFullYear(currentYear+1)
+			}
+			else{
+				fechaVencimiento.setMonth(currentMonth+1)
+			}
+
+
+			//0 a 11 son los meses de opcion de pago mensual, 12 y 13 semestral y 14 anual
+			var option = <?php echo json_encode($option, JSON_HEX_TAG);?>;
+			document.getElementById("valFechaVencimiento").innerHTML = fechaVencimiento.toDateString();
+		</script>
+
 	</body>
 </html>
