@@ -5,7 +5,7 @@
 	$empleado = $_GET['empleado'];
 
 	$arreglo = array("Abierta","Analisis", "Aprobada", "Desaprobada");
-    
+
     $consulta = "SELECT id, estado, tipo, DNI, apellido, nombre FROM solicitudes JOIN cliente WHERE DNI_cliente = DNI;";
 
 	$resultado = mysqli_query($conexion,$consulta);
@@ -18,9 +18,6 @@
 			$nombre = $row['nombre'];
 			$apellido = $row['apellido'];
 			$DNI = $row['DNI'];
-
-			/*$clave = array_search($estado, $arreglo);
-			unset($arreglo[$clave]);*/
 	?>
 
 			<tr>
@@ -34,7 +31,7 @@
       				<form method="POST">
 	      				<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 							<option selected><?php echo $estado?></option>
-	 						<?php $i =0; foreach ($arreglo as $item){ ?>
+	 						<?php $i =0; $arreglo2 = $arreglo; $clave = array_search($estado, $arreglo2); unset($arreglo2[$clave]); foreach ($arreglo2 as $item){ ?>
 							<option value="ConfirmacionEmpleadoCambiaEstadoSolicitud.php?empleado=<?php echo $empleado;?>&id=<?php echo $id;?>&estado=<?php echo $item;?>" > <?php echo $item; ?> </option>
 							<?php $i= $i+1; } ?>
 						</select>
@@ -44,14 +41,14 @@
 
 			<script type="text/javascript">
 				function funcion(e){
-				
+
 					if(e.value == "Reintegro"){
 						window.location.href = "masInfoReintegroDesdeEmpleado.php?empleado=<?php echo $empleado;?>&id="+e.name;
 					}
 					if (e.value == "Prestacion Institucion"){
 						window.location.href = "masInfoPrestacionInstitucionalDesdeEmpleado.php?empleado=<?php echo $empleado;?>&id="+e.name;
 					}
-					
+
 					if(e.value == "Prestacion Profesional"){
 						window.location.href = "masInfoPrestacionProfesionalDesdeEmpleado.php?empleado=<?php echo $empleado;?>&id="+e.name;
 					}

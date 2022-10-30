@@ -1,7 +1,11 @@
 <?php
 	require 'conexion.php';
 	session_start();
-    
+
+	$admin = $_GET['admin'];
+
+	$arreglo = array("Abierta","Analisis", "Aprobada", "Desaprobada");
+
     $consulta = "SELECT id, estado, tipo, DNI, apellido, nombre FROM solicitudes JOIN cliente WHERE DNI_cliente = DNI;";
 
 	$resultado = mysqli_query($conexion,$consulta);
@@ -23,7 +27,16 @@
       			<th><?php echo $nombre ?></th>
       			<th><?php echo $DNI; ?></th>
                 <th><button class="botones" name = "<?php echo $id?>" value = "<?php echo $tipo ?>" onclick=funcion(this)> Mas detalles </button></th >
-      			<th><?php echo $estado;?></th>
+      			<th>
+      				<form method="POST">
+	      				<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+							<option selected><?php echo $estado?></option>
+	 						<?php $i =0; $arreglo2 = $arreglo; $clave = array_search($estado, $arreglo2); unset($arreglo2[$clave]); foreach ($arreglo2 as $item){ ?>
+							<option value="ConfirmacionAdministradorCambiaEstadoSolicitud.php?admin=<?php echo $admin;?>&id=<?php echo $id;?>&estado=<?php echo $item;?>" > <?php echo $item; ?> </option>
+							<?php $i= $i+1; } ?>
+						</select>
+					</form>
+				</th>
     		</tr>
 
 			<script type="text/javascript">

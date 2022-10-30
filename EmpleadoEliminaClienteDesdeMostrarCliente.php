@@ -6,7 +6,7 @@
 
 	//Pedir las solicitudes de los clientes
 
-	$consulta = "SELECT id FROM solicitudes WHERE DNI_cliente = ".$cliente.";";
+	$consulta = "SELECT id FROM solicitudes WHERE DNI_cliente = ".$cliente." AND estado <> 'Aprobada' AND estado <> 'Desaprobada';";
 	$resultado = mysqli_query($conexion,$consulta);
 	$array = array();
 	$i = 0;
@@ -18,25 +18,41 @@
 		$i++;
 	}
 
-	foreach ($array as $id) {
-		// Elimino de solicitud_prestacion_institucion
-		$consulta = "DELETE FROM solicitud_prestacion_institucion WHERE id = ".$id.";";	
+	if(sizeof($array)>0){
+		echo "<script> alert('No se pueden eliminar clientes con solicitudes pendientes.');  window.location='EmpleadoListaClientes.php?empleado=$empleado';</script>";	
+	}else{
+
+		$consulta = "SELECT id FROM solicitudes WHERE DNI_cliente = ".$cliente.";";
 		$resultado = mysqli_query($conexion,$consulta);
-		// Elimino de solicitud_prestacion_profesional
-		$consulta = "DELETE FROM solicitud_prestacion_profesional WHERE id = ".$id.";";	
-		$resultado = mysqli_query($conexion,$consulta);
-		// Elimino de solicitud_reintegro_compra
-		$consulta = "DELETE FROM solicitud_reintegro_compra WHERE id = ".$id.";";	
-		$resultado = mysqli_query($conexion,$consulta);
-		// Elimino de solicitud_reintegro_prestacion_institucion
-		$consulta = "DELETE FROM solicitud_reintegro_prestacion_institucion WHERE id = ".$id.";";	
-		$resultado = mysqli_query($conexion,$consulta);
-		// Elimino de solicitud_reintegro_prestacion_profesional
-		$consulta = "DELETE FROM solicitud_reintegro_prestacion_profesional WHERE id = ".$id.";";	
-		$resultado = mysqli_query($conexion,$consulta);
-		// Elimino de solicitudes
-		$consulta = "DELETE FROM solicitudes WHERE id = ".$id.";";	
-		$resultado = mysqli_query($conexion,$consulta);
+		$array2 = array();
+
+		$i = 0;
+
+		while ($row = $resultado->fetch_array() ) {
+			$array2[$i] = $row['id'];
+			$i++;
+		}
+
+		foreach ($array2 as $id) {
+			// Elimino de solicitud_prestacion_institucion
+			$consulta = "DELETE FROM solicitud_prestacion_institucion WHERE id = ".$id.";";	
+			$resultado = mysqli_query($conexion,$consulta);
+			// Elimino de solicitud_prestacion_profesional
+			$consulta = "DELETE FROM solicitud_prestacion_profesional WHERE id = ".$id.";";	
+			$resultado = mysqli_query($conexion,$consulta);
+			// Elimino de solicitud_reintegro_compra
+			$consulta = "DELETE FROM solicitud_reintegro_compra WHERE id = ".$id.";";	
+			$resultado = mysqli_query($conexion,$consulta);
+			// Elimino de solicitud_reintegro_prestacion_institucion
+			$consulta = "DELETE FROM solicitud_reintegro_prestacion_institucion WHERE id = ".$id.";";	
+			$resultado = mysqli_query($conexion,$consulta);
+			// Elimino de solicitud_reintegro_prestacion_profesional
+			$consulta = "DELETE FROM solicitud_reintegro_prestacion_profesional WHERE id = ".$id.";";	
+			$resultado = mysqli_query($conexion,$consulta);
+			// Elimino de solicitudes
+			$consulta = "DELETE FROM solicitudes WHERE id = ".$id.";";	
+			$resultado = mysqli_query($conexion,$consulta);
+		}
 	}
 	
 	// Eliminar Menores
