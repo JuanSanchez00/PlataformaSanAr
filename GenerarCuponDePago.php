@@ -97,13 +97,12 @@
 						toReturn = 30
 					}
 					else{
-						const leapYear = new Date(year, 1, 29).getDate() === 29;
-						if(leapYear){
-							toReturn = 29
-						}
-						else{
-							toReturn = 28
-						}
+						const year = new Date()
+						 if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+					        toReturn = 29
+					    } else {
+					        toReturn = 28
+					    }
 					}
 				}
 				return toReturn;
@@ -229,6 +228,7 @@
 
 				//Pago atrasado
 				if(currentDay>10 || currentMonth>option){
+					
 					if(currentMonth == 11){
 						fechaVencimiento.setMonth(0)
 						fechaVencimiento.setFullYear(currentYear+1)
@@ -236,15 +236,15 @@
 					else{
 						fechaVencimiento.setMonth(currentMonth+1)
 					}
-
+					
 					var diasDeRetraso = 0
-
+					
 					var i = option
 					while(i<currentMonth){
 						diasDeRetraso = diasDeRetraso + cantidadDiasMes(i)
 						i++
 					}
-
+					
 					if(currentDay > 10){
 						diasDeRetraso = diasDeRetraso + (currentDay - 10)
 					}
@@ -253,6 +253,7 @@
 					
 					monto = monto*recargo
 					montoMenor = montoMenor*recargo
+					
 				}
 				//Pago en tiempo
 				else{
@@ -263,21 +264,21 @@
 				if(option==12 || option==13){
 					cuota = "Semestral - "+getSemestre(option)+" "+currentYear
 					fechaVencimiento.setDate(10)
-					monto = monto*6*0,85
-					montoMenor = montoMenor*6*0,85
+					monto = monto*6*0.85
+					montoMenor = montoMenor*6*0.85
 				}
 				//Option = 14
 				else{
 					cuota = "Anual - "+currentYear
 					fechaVencimiento.setDate(10)
-					monto = monto*12*0,65
-					montoMenor = montoMenor*12*0,65 
+					monto = monto*12*0.65
+					montoMenor = montoMenor*12*0.65
 				}
 			}
 
 			monto = monto + montoMenor
 			
-			document.getElementById("valMontoMenor").innerHTML = montoMenor
+			document.getElementById("valMontoMenor").innerHTML = "$"+montoMenor
 			document.getElementById("valFechaVencimiento").innerHTML = fechaVencimiento.toDateString()
 			document.getElementById("valCuota").innerHTML = cuota
 			document.getElementById("valMonto").innerHTML = "$"+monto
